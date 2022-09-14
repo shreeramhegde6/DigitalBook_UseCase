@@ -7,6 +7,7 @@ const routes: Routes = [
   {path:'',component : LoginComponent},
   {path : 'signup', component : SignupComponent},
    {path:'home',component : LoginComponent},
+   
   // {path : 'signupadd', loadChildren :()=>import('../signup/signup.module').then(m=>m.SignupModule)}
   
 ];
