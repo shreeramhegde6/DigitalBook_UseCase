@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreatbookComponent } from './creatbook/creatbook.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,9 @@ import { CreatbookComponent } from './creatbook/creatbook.component';
     CreatbookComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+    
   ],
   exports :[CreatbookComponent]
 })
