@@ -15,7 +15,7 @@ export class CreatbookComponent implements OnInit {
   }
 
   popUp(){
-    alert("added"+this.FormData.contents);
+    alert("added"+this.FormData.category);
   }
 
 }
