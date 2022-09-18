@@ -34,13 +34,9 @@ namespace DigitalBookAPI.Models
 
             modelBuilder.Entity<TblLogin>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("tblLogin");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Password)
                     .IsRequired()

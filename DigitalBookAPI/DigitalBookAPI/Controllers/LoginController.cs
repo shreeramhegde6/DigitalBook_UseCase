@@ -41,6 +41,7 @@ namespace DigitalBookAPI.Controllers
             if (IsRegister)
             {
                 db.TblLogins.Add(login);
+                db.SaveChanges();
                 return login;
             }
             else
@@ -71,7 +72,7 @@ namespace DigitalBookAPI.Controllers
         }
 
         [HttpPost]
-        [Route("register")]
+        [Route("register-user")]
         public IActionResult Register(TblLogin login)
         {
             IActionResult response = Unauthorized();
