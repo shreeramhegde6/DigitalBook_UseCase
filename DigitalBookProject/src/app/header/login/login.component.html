@@ -1,3 +1,4 @@
+
 <section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -17,19 +18,20 @@
                     <p>Please login to your account</p>
   
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example11" class="form-control"
-                        placeholder="Phone number or email address" />
+                      <input type="email" [(ngModel)]=UserData.userName  name="user" id="form2Example11" class="form-control"
+                        placeholder="email address" />
                       <label class="form-label" for="form2Example11">Username</label>
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="password" id="form2Example22" class="form-control" />
+                      <input type="password" [(ngModel)]=UserData.password name="pass" id="form2Example22" class="form-control" />
                       <label class="form-label" for="form2Example22">Password</label>
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
 
-                        <a class="btn btn-primary" href="home" role="button">Login</a>
+                         <a class="btn btn-primary" (click)="loginUser()" role="button" >Login</a> -->
+                        <!-- <button type="button" class="btn btn-primary" (click)="loginUser()"></button> -->
 
                       
                       <a class="text-muted" href="#!">Forgot password?</a>
