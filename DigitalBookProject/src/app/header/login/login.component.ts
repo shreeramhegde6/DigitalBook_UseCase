@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     this.http.post("https://localhost:44396/api/Login/login",this.UserData).subscribe(
       res=>{
        // localStorage.setItem('token',res.token);
+       sessionStorage.setItem('token',"logged");
         this._router.navigate(['createbook']);
         alert("loggedIn");
       },
@@ -33,6 +34,9 @@ export class LoginComponent implements OnInit {
         alert(res)
       }
     );
+  }
+  createNew(){
+    this._router.navigate(['signup']);
   }
 
 }
