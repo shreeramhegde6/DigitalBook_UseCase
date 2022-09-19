@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AuthorModule } from './author/author.module';
 import { ReaderModule } from './reader/reader.module';
 import { HeaderModule } from './header/header.module';
+import { MainserviceService } from './mainservice.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { HeaderModule } from './header/header.module';
  
     
   ],
-  providers: [],
+  providers: [MainserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
