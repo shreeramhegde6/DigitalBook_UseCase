@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -14,7 +15,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     RouterModule,
-    FormsModule
+    FormsModule,BrowserModule
   ]
 })
 export class HeaderModule { }

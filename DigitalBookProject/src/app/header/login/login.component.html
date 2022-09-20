@@ -32,11 +32,17 @@
 
                          <a class="btn btn-primary" (click)="loginUser()" role="button" >Login</a> 
                         <!-- <button type="button" class="btn btn-primary" (click)="loginUser()"></button> -->
-
+                        <div *ngIf="correctLogin" class="alert alert-primary" role="alert">
+                          <strong>Login Success!!</strong> <a  class="alert-link" href="createbook">Click here to Continue</a>
+                        </div>.
+                        <div *ngIf="wrong" class="alert alert-danger" role="alert">
+                          <strong>Login Failed!! Please Check Your Credentials</strong> <a  class="alert-link" [routerLink]="['']">Click here to Try It Again!!</a>
+                        </div>
                       
                       
                     </div>
-  
+
+
                     <div class="d-flex align-items-center justify-content-center pb-4">
                       <p class="mb-0 me-2">Don't have an account?</p>
                       <button type="button" (click)="createNew()" class="btn btn-outline-danger">Create new</button>
@@ -60,4 +66,5 @@
       </div>
     </div>
   </section>
+ 
   
