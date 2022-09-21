@@ -13,7 +13,7 @@
                                 class="form-control-label px-3"><b>Title</b></label> </div>
 
                         <div class="form-group col-sm-6 flex-column d-flex"><input type="text"
-                                [(ngModel)]="FormData.firstName" id="fname" name="fname"> </div>
+                                [(ngModel)]="FormData.title" id="fname" name="fname"> </div>
                     </div>
 
                     <div class="row justify-content-between text-left">
@@ -99,4 +99,8 @@
         </div>
     </div>
 </div>
-<app-grid-ui></app-grid-ui>
+<app-grid-ui
+[grid-columns]="[{'colName':'id'},{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'active'},{'colName':'contents'}]"
+[grid-data]="CreateBookModels" 
+(grid-selected)="EditAuthor($event)" (grid-delete)="DeleteAuthor($event)">
+</app-grid-ui>

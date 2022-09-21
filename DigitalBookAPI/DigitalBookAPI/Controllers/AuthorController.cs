@@ -24,5 +24,13 @@ namespace DigitalBookAPI.Controllers
             var response = new { Status = "Success" };
             return Ok(response);
         }
+
+        [Route("getbook")]
+        [HttpGet]
+        public IEnumerable<TblCreatebook> Get()
+        {
+            return db.TblCreatebooks;
+            //return db.TblCreatebooks.Where(x => x.AuthorEmail == cname).Select(x => x).ToList();
+        }
     }
 }

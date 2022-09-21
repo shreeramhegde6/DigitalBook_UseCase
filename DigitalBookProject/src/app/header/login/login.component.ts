@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
   loginUser(){
 
-    //this._service.loginUser(this.UserData)
+   
 
     this._service.loginUser(this.UserData).subscribe(
       res=>{
@@ -48,9 +48,6 @@ export class LoginComponent implements OnInit {
        this.correctLogin=true;
        this.wrong=false;
        sessionStorage.setItem('token',"logged");
-       //alert("Success")
-      // this._router.navigate(['createbook']);
-        
         
       },
       res=>{
