@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes } from '@angular/router';
+import { MainserviceService } from 'src/app/mainservice.service';
 import { UserModel } from './usermodel';
 
 @Component({
@@ -10,10 +11,13 @@ import { UserModel } from './usermodel';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http:HttpClient,private _router:Router) { }
+  constructor(private http:HttpClient,private _router:Router,private _service:MainserviceService) { }
   UserData:UserModel=new UserModel();
   correctLogin:boolean=false;
   wrong:boolean=false;
+  author:boolean=false;
+  reader:boolean=false;
+  loadbtn:boolean=true;
 
 
   
@@ -23,10 +27,22 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
  
+  loadauthor(){
+    this.author=true;
+    
+
+  }
+  loadread(){
+    this.reader=true;
+    
+
+  }
 
   loginUser(){
 
-    this.http.post("https://localhost:44396/api/Login/login",this.UserData).subscribe(
+    //this._service.loginUser(this.UserData)
+
+    this._service.loginUser(this.UserData).subscribe(
       res=>{
        // localStorage.setItem('token',res.token);
        this.correctLogin=true;

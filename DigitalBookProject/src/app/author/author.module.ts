@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreatbookComponent } from './creatbook/creatbook.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MainserviceService } from '../mainservice.service';
+import { SharedModule } from '../shared/shared.module';
+
 
 
 
@@ -11,9 +14,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
     
   ],
-  exports :[CreatbookComponent]
+  exports :[CreatbookComponent],
+  providers :[MainserviceService]
 })
 export class AuthorModule { }

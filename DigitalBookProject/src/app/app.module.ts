@@ -8,6 +8,8 @@ import { AuthorModule } from './author/author.module';
 import { ReaderModule } from './reader/reader.module';
 import { HeaderModule } from './header/header.module';
 import { MainserviceService } from './mainservice.service';
+import { GridUiModule } from './grid-ui/grid-ui.module';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MainserviceService } from './mainservice.service';
     AuthorModule,
     ReaderModule,
     HttpClientModule,
-    HeaderModule
+    HeaderModule,
+    GridUiModule
  
     
   ],

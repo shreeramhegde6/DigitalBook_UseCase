@@ -23,7 +23,7 @@ namespace DigitalBookAPI.Controllers
             _config = config;
         }
         [HttpPost]
-        [Route("login")]
+        [Route("authorlogin")]
         public IActionResult Login(TblLogin login)
         {
             IActionResult response = Unauthorized();
@@ -72,7 +72,7 @@ namespace DigitalBookAPI.Controllers
         }
 
         [HttpPost]
-        [Route("register-user")]
+        [Route("register-author")]
         public IActionResult Register(TblLogin login)
         {
             IActionResult response = Unauthorized();

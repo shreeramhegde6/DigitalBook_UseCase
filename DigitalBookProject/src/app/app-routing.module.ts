@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreatbookComponent } from './author/creatbook/creatbook.component';
+import { HomeComponent } from './header/home/home.component';
 import { LoginComponent } from './header/login/login.component';
 import { SignupComponent } from './header/signup/signup.component';
 
