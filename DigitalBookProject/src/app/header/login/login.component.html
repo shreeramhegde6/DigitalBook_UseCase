@@ -106,7 +106,7 @@
                          <a class="btn btn-primary" (click)="loginUser()" role="button" >Login</a> 
                         <!-- <button type="button" class="btn btn-primary" (click)="loginUser()"></button> -->
                         <div *ngIf="correctLogin" class="alert alert-primary" role="alert">
-                          <strong>Login Success!!</strong> <a  class="alert-link" href="createbook">Click here to Continue</a>
+                          <strong>Login Success!!</strong> <a  class="alert-link" href="searchbook">Click here to Continue</a>
                         </div>.
                         <div *ngIf="wrong" class="alert alert-danger" role="alert">
                           <strong>Login Failed!! Please Check Your Credentials</strong> <a  class="alert-link" [routerLink]="['']">Click here to Try It Again!!</a>

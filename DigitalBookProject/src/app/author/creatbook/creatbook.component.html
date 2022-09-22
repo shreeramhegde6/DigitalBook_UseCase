@@ -36,8 +36,8 @@
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3"><b>Price</b></label> </div>
 
-                        <div class="form-group col-sm-6 flex-column d-flex"><input type="text" id="fname" name="fname"
-                                placeholder="Enter the Amount" onblur="validate(1)"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"><input type="text" id="fname" name="Pricename"
+                               [ngModel]="FormData.price" placeholder="Enter the Amount"> </div>
                     </div>
 
                     <div class="row justify-content-between text-left">
@@ -45,7 +45,8 @@
                                 class="form-control-label px-3"><b>Image</b></label> </div>
 
                         <div class="form-group col-sm-6 flex-column d-flex">
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1"> -->
+                            <input type="text" name="image" [ngModel]="FormData.image" class="form-control-file" id="exampleFormControlFile1">
                         </div>
                         <!-- <input type="textarea" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)">  </div> -->
                     </div>
@@ -55,8 +56,17 @@
                                 class="form-control-label px-3"><b>Publisher</b></label> </div>
 
                         <div class="form-group col-sm-6 flex-column d-flex"><input type="text" id="fname" name="fname"
-                                placeholder="Enter Publisher name" onblur="validate(1)"> </div>
+                               [ngModel]="FormData.publisher" placeholder="Enter Publisher name" > </div>
                     </div>
+
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3"><b>Active</b></label> </div>
+
+                        <div class="form-group col-sm-6 flex-column d-flex"><input type="text" id="fname" name="fname"
+                               [ngModel]="FormData.active" placeholder="YES or NO" > </div>
+                    </div>
+<!-- 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3"><b>Active</b></label> </div>
@@ -65,14 +75,14 @@
                                     <span class="populated"><input type="radio" name="active" value="yes" [(ngModel)]="FormData.active" class="eventAmount" checked="checked"/> Yes</span>
                                     <span  class="populated"><input type="radio" name="active" [(ngModel)]="FormData.active" value="no" class="eventAmount" /> No</span>
                                     </p>
-                    </div>
+                    </div> -->
 
                         <!-- <div class="form-group col-sm-6 flex-column d-flex">
                         Yes<input type="radio" id="yes" name="active">No
                         <div class="form-grop col sm-6 flex-column d-flex"><input type="radio" id="no" name="active"></div>
                         
                     </div> -->
-                    </div>
+                    <!-- </div> -->
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3"><b>Contents</b></label> </div>
