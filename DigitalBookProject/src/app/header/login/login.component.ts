@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   loadbtn:boolean=true;
 
 
+
   
 
 
@@ -38,21 +39,28 @@ export class LoginComponent implements OnInit {
 
   }
 
+
+
   loginUser(){
 
+    var userObject={
+      userName:this.UserData.userName,
+      password:this.UserData.password
+    };
    
 
-    this._service.loginUser(this.UserData).subscribe(
+    this._service.loginUser(userObject).subscribe(
       res=>{
        // localStorage.setItem('token',res.token);
        this.correctLogin=true;
        this.wrong=false;
        sessionStorage.setItem('token',"logged");
+       
         
       },
       res=>{
         this.wrong=true;
-        //alert(res)
+        //alert(res);
       }
     );
   }
