@@ -44,5 +44,27 @@ namespace DigitalBookAPI.Controllers
             var response = new { Status = "Success" };
             return Ok(response);
         }
+
+
+        [HttpPut]
+        [Route("bookupdate")]
+        public IActionResult put([FromBody] TblCreatebook createbook)
+        {
+            var authorUpdate = db.TblCreatebooks.Where(s => s.Id == createbook.Id).FirstOrDefault();
+            authorUpdate.Title = createbook.Title;
+            authorUpdate.Publisher = createbook.Publisher;
+            authorUpdate.Price = createbook.Price;
+            authorUpdate.Image = createbook.Image;
+            authorUpdate.Category = createbook.Category;
+            authorUpdate.Contents = createbook.Contents;
+            authorUpdate.Active = createbook.Active;
+            authorUpdate.AuthorEmail = createbook.AuthorEmail;
+            db.TblCreatebooks.Update(authorUpdate);
+
+
+            db.SaveChanges();
+            var response = new { Status = "Success" };
+            return Ok(response);
+        }
     }
 }

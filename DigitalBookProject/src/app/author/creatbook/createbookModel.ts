@@ -8,6 +8,7 @@ export class CreateBook{
     active:string='';
     contents:string='';
     authorEmail:string='';
+    id:number=0;
 
 
     formCustomerGroup:FormGroup;//Create
