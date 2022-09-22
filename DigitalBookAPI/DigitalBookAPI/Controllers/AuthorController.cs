@@ -32,5 +32,17 @@ namespace DigitalBookAPI.Controllers
             return db.TblCreatebooks;
             //return db.TblCreatebooks.Where(x => x.AuthorEmail == cname).Select(x => x).ToList();
         }
+
+        //public IEnumerable<>
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            var data = db.TblCreatebooks.Where(x => x.Id == id).FirstOrDefault();
+            db.TblCreatebooks.Remove(data);
+            db.SaveChanges();
+            //
+            var response = new { Status = "Success" };
+            return Ok(response);
+        }
     }
 }
