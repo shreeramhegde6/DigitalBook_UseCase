@@ -87,23 +87,24 @@
                     <h4 class="mt-1 mb-5 pb-1">We are The DigiBooks Team Please Login to Read</h4>
                   </div>
   
-                  <form>
+                  <!-- <form> -->
+                    <form [formGroup]="UserData.formCustomerGroup">
                     <p><strong> Enter Your Reader Account Credentials</strong></p>
   
                     <div class="form-outline mb-4">
-                      <input type="email" [(ngModel)]=UserData.userName  name="user" id="form2Example11" class="form-control"
+                      <input type="email" [(ngModel)]=UserData.userName formControlName="UserNameControl"  name="user" id="form2Example11" class="form-control"
                         placeholder="email address" />
                       <label class="form-label" for="form2Example11">Username</label>
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="password" [(ngModel)]=UserData.password name="pass" id="form2Example22" class="form-control" />
+                      <input type="password" [(ngModel)]=UserData.password formControlName="PasswordControl" name="pass" id="form2Example22" class="form-control" />
                       <label class="form-label" for="form2Example22">Password</label>
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
-
-                         <a class="btn btn-primary" (click)="loginUser()" role="button" >Login</a> 
+                      <input type="button" [disabled]="!(UserData.formCustomerGroup.valid)" class="btn btn-primary" value="Login" (click)="loginReader()" />
+                          
                         <!-- <button type="button" class="btn btn-primary" (click)="loginUser()"></button> -->
                         <div *ngIf="correctLogin" class="alert alert-primary" role="alert">
                           <strong>Login Success!!</strong> <a  class="alert-link" href="searchbook">Click here to Continue</a>

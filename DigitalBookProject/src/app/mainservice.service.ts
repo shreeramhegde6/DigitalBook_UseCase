@@ -12,8 +12,14 @@ export class MainserviceService {
 _loginUrl="https://localhost:44396/api/Login/authorlogin";
 _regUrl="https://localhost:44396/api/Login/register-author";
 
+_loginReaderUrl="https://localhost:44396/api/Reader/readerlogin";
+
 loginUser(login:any){
   return this.http.post(this._loginUrl,login);
+}
+
+loginReader(login:any){
+  return this.http.post(this._loginReaderUrl,login);
 }
 
 }

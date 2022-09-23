@@ -29,6 +29,8 @@ export class SearchbookComponent implements OnInit {
     
   }
   
+  BuyBook(input:any){}
+  bookBuy(input:any){}
 
      Success(input: any) {
     console.log(input);

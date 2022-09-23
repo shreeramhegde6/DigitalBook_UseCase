@@ -40,6 +40,33 @@ export class LoginComponent implements OnInit {
   }
 
 
+//readerLogin
+loginReader(){
+
+  var userObject={
+    userName:this.UserData.userName,
+    password:this.UserData.password
+  };
+ 
+
+  this._service.loginReader(userObject).subscribe(
+    res=>{
+     // localStorage.setItem('token',res.token);
+     this.correctLogin=true;
+     this.wrong=false;
+     sessionStorage.setItem('token',"logged");
+     sessionStorage.setItem('userNames',this.UserData.userName);
+     
+      
+    },
+    res=>{
+      this.wrong=true;
+      //alert(res);
+    }
+  );
+}
+//readerLogincmplt
+
 
   loginUser(){
 
@@ -55,6 +82,7 @@ export class LoginComponent implements OnInit {
        this.correctLogin=true;
        this.wrong=false;
        sessionStorage.setItem('token',"logged");
+       sessionStorage.setItem('userNames',this.UserData.userName);
        
         
       },

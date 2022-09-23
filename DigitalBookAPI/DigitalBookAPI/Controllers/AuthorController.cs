@@ -27,10 +27,10 @@ namespace DigitalBookAPI.Controllers
 
         [Route("getbook")]
         [HttpGet]
-        public IEnumerable<TblCreatebook> Get()
+        public IEnumerable<TblCreatebook> Get(string cname)
         {
-            return db.TblCreatebooks;
-            //return db.TblCreatebooks.Where(x => x.AuthorEmail == cname).Select(x => x).ToList();
+            //return db.TblCreatebooks;
+            return db.TblCreatebooks.Where(x => x.AuthorEmail == cname).Select(x => x).ToList();
         }
 
         //public IEnumerable<>

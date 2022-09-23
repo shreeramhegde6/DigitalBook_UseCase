@@ -11,13 +11,14 @@ export class CreatbookComponent implements OnInit {
   FormData:CreateBook=new CreateBook();
   CreateBookModels:Array<CreateBook>=new Array<CreateBook>();
   isEdit:boolean=false;
-  authorEmail:string='a.com'
+  authorEmail:any=sessionStorage.getItem('userNames');
   constructor(private http:HttpClient) {}
   
 
     
   GetStatus(){
-    this.http.get("https://localhost:44396/api/Author/getbook").subscribe(res=>this.Success(res),res=>console.log(res));
+    //url:any="https://localhost:44396/api/Author/getbook?"+this.authorEmail;
+    this.http.get("https://localhost:44396/api/Author/getbook?cname="+this.authorEmail).subscribe(res=>this.Success(res),res=>console.log(res));
   }
 
 
