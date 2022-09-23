@@ -12,6 +12,8 @@ export class CreatbookComponent implements OnInit {
   CreateBookModels:Array<CreateBook>=new Array<CreateBook>();
   isEdit:boolean=false;
   authorEmail:any=sessionStorage.getItem('userNames');
+  addsuccess:boolean=false;
+
   constructor(private http:HttpClient) {}
   
 
@@ -84,12 +86,18 @@ export class CreatbookComponent implements OnInit {
   
   }
   PostSuccess(input: any) {
+    this.addsuccess=true;
+    //window.location.reload();
     this.GetStatus();
   }
   EditAuthor1(input: any) {
     
     this.isEdit = true;
     this.FormData = input;
+  }
+
+  reloadPage(){
+    window.location.reload();
   }
 
 

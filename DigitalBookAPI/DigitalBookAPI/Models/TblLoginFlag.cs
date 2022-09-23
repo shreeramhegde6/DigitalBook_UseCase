@@ -11,5 +11,6 @@ namespace DigitalBookAPI.Models
         public string UserName { get; set; }
         public string Password { get; set; }
         public int? CheckFlag { get; set; }
+        public DateTime? Creationdate { get; set; }
     }
 }

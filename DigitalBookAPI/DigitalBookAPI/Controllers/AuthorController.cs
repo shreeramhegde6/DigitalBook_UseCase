@@ -18,6 +18,7 @@ namespace DigitalBookAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] TblCreatebook book)
         {
+            book.Creationdate = DateTime.Today;
             db.TblCreatebooks.Add(book);
 
             db.SaveChanges();

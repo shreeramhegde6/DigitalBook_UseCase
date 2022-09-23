@@ -16,5 +16,6 @@ namespace DigitalBookAPI.Models
         public string Active { get; set; }
         public string Contents { get; set; }
         public string AuthorEmail { get; set; }
+        public DateTime? Creationdate { get; set; }
     }
 }

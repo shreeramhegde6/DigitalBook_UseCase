@@ -61,6 +61,8 @@ namespace DigitalBookAPI.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Creationdate).HasColumnType("datetime");
+
                 entity.Property(e => e.Image)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -102,6 +104,8 @@ namespace DigitalBookAPI.Models
                 entity.ToTable("tblLoginFlag");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Creationdate).HasColumnType("datetime");
 
                 entity.Property(e => e.Password)
                     .IsRequired()

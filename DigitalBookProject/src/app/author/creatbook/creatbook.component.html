@@ -60,6 +60,9 @@
             <div class="form-group col-sm-6"> <button type="button" class="btn-block btn-primary"
                     (click)="Add()">Save and Create</button> </div>
         </div>
+        <div *ngIf="addsuccess" class="alert alert-primary" role="alert">
+          <strong>Success!!</strong> <a  class="alert-link" (click)="reloadPage()">Click here to View the Updated Catalog</a>
+        </div>
         </div>
 
       </div>
