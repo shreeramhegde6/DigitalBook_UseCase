@@ -1,5 +1,5 @@
-    <div style="background-image: url(assets/images/logo.jpg);">
-      <div class="col-lg-6 col-xl-6 col-md-1 col-sm-1" style="background-color: blue; background-image: url(assets/images/logo.jpg);">
+    <div style="background-image: url(assets/images/book1.jpg);">
+      <div class="col-lg-6 col-xl-6 col-md-1 col-sm-1" style="background-color: blue; background-image: url(assets/images/glass.jpg);">
         <div class="card bg-light" style="background-color: blue;">
           <h4 class="card-title mt-3 text-center">Create Book</h4>
           <article class="card-body mx-auto" style="max-width: 400px;">
@@ -62,7 +62,10 @@
                     (click)="Add()">Save and Create</button> </div>
         </div>
         <div *ngIf="addsuccess" class="alert alert-primary" role="alert">
-          <strong>Success!!</strong> <a  class="alert-link" (click)="reloadPage()">Click here to View the Updated Catalog</a>
+          <strong>Success!!</strong> <a  class="alert-link" (click)="reloadPage()">"Click here to View the Updated Catalog"</a>
+        </div>
+        <div *ngIf="addFail" class="alert alert-primary" role="alert">
+          <strong>Something Went Wrong!!</strong> <a  class="alert-link" (click)="reloadPage()">"Click here to Try it Again"</a>
         </div>
         </div>
 

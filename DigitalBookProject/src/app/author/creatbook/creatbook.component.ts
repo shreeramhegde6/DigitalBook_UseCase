@@ -13,8 +13,10 @@ export class CreatbookComponent implements OnInit {
   isEdit:boolean=false;
   authorEmail:any=sessionStorage.getItem('userNames');
   addsuccess:boolean=false;
+  addFail:boolean=false;
   public selectedFile!:File;
   public uploadData = new FormData();
+  DefaultimagePut:string='Images/logo.jpg';
 
   constructor(private http:HttpClient) {}
   
@@ -39,9 +41,7 @@ export class CreatbookComponent implements OnInit {
      this.CreateBookModels = input;
    }
 
-  popUp(){
-    alert("added"+this.FormData.category);
-  }
+ 
 
   EditAuthor(input: any) {
    
@@ -51,7 +51,7 @@ export class CreatbookComponent implements OnInit {
 
   DeleteAuthor(input: any){
  
-    this.http.delete("https://localhost:44396/api/Author?id=" + input.id).subscribe(res => this.PostSuccess(res), res => console.log(res));
+    this.http.delete("https://localhost:44396/api/Author?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
   }
 
   Add() {
@@ -71,30 +71,42 @@ export class CreatbookComponent implements OnInit {
       id:this.FormData.id,
       Title:this.FormData.title,
       Category:this.FormData.category,
-      Image:this.FormData.image,
+      Image:this.DefaultimagePut,
       Price:this.FormData.price,
       Publisher:this.FormData.publisher,
       Active:this.FormData.active,
       Contents:this.FormData.contents,
       AuthorEmail:this.authorEmail
     };
-    debugger;
-    this.uploadData.append('Image', this.selectedFile, this.selectedFile.name);
-    this.uploadData.append('Title', formElements.Title);
-    this.uploadData.append('Price', formElements.Price);
-    this.uploadData.append('Category', formElements.Category);
+    //debugger;
+    // this.uploadData.append('Image', this.selectedFile, this.selectedFile.name);
+    // this.uploadData.append('Title', formElements.Title);
+    // this.uploadData.append('Price', formElements.Price);
+    // this.uploadData.append('Category', formElements.Category);
     
-    this.uploadData.append('Active', formElements.Active);
-    this.uploadData.append('Contents', formElements.Contents);
-    this.uploadData.append('Publisher', formElements.Publisher);
-    this.uploadData.append('AuthorEmail', formElements.AuthorEmail);
+    // this.uploadData.append('Active', formElements.Active);
+    // this.uploadData.append('Contents', formElements.Contents);
+    // this.uploadData.append('Publisher', formElements.Publisher);
+    // this.uploadData.append('AuthorEmail', formElements.AuthorEmail);
 
 
     if (this.isEdit) {
+      
       this.http.put("https://localhost:44396/api/Author/bookupdate", UpdateformElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
     }
     else {
-      this.http.post("https://localhost:44396/api/Author/createbook-image", this.uploadData).subscribe(res => this.PostSuccess(res), res => console.log(res))
+
+      this.uploadData.append('Image', this.selectedFile, this.selectedFile.name);
+      this.uploadData.append('Title', formElements.Title);
+      this.uploadData.append('Price', formElements.Price);
+      this.uploadData.append('Category', formElements.Category);
+      
+      this.uploadData.append('Active', formElements.Active);
+      this.uploadData.append('Contents', formElements.Contents);
+      this.uploadData.append('Publisher', formElements.Publisher);
+      this.uploadData.append('AuthorEmail', formElements.AuthorEmail);
+  
+      this.http.post("https://localhost:44396/api/Author/createbook-image", this.uploadData).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res))
      //this.http.post("https://localhost:44396/api/Author/createbook", formElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
     }
 
@@ -105,6 +117,10 @@ export class CreatbookComponent implements OnInit {
     //window.location.reload();
     this.GetStatus();
   }
+  PostFailure(input: any){
+    this.addFail=true;
+  }
+
   EditAuthor1(input: any) {
     
     this.isEdit = true;
