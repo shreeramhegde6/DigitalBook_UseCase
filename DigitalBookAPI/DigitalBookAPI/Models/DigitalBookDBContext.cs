@@ -18,6 +18,7 @@ namespace DigitalBookAPI.Models
         }
 
         public virtual DbSet<TblCreatebook> TblCreatebooks { get; set; }
+        public virtual DbSet<TblImage> TblImages { get; set; }
         public virtual DbSet<TblLogin> TblLogins { get; set; }
         public virtual DbSet<TblLoginFlag> TblLoginFlags { get; set; }
         public virtual DbSet<TblReaderLogin> TblReaderLogins { get; set; }
@@ -82,6 +83,13 @@ namespace DigitalBookAPI.Models
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<TblImage>(entity =>
+            {
+                entity.ToTable("tblImage");
+
+                entity.Property(e => e.ImageUrl).HasMaxLength(50);
             });
 
             modelBuilder.Entity<TblLogin>(entity =>

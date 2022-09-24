@@ -11,20 +11,50 @@ export class CreateBook{
     id:number=0;
 
 
-    formCustomerGroup:FormGroup;//Create
-
+    public formAuthorGroup:FormGroup;
     constructor(){
-        var _builder=new FormBuilder();
-        this.formCustomerGroup=_builder.group({});
-        this.formCustomerGroup.addControl("CustomerNameControl",new FormControl('',Validators.required));
-        //this.formCustomerGroup.addControl("CustomerCodeControl",new FormControl('',Validators.required));
-        this.formCustomerGroup.addControl("CustomerAmountControl",new FormControl('',Validators.required));
+    var _builder=new FormBuilder();
+    this.formAuthorGroup=_builder.group({});
+    this.formAuthorGroup.addControl("TitleControl",new FormControl('',Validators.required));
+    this.formAuthorGroup.addControl("CategoryControl",new FormControl('',Validators.required));
+    this.formAuthorGroup.addControl("AuthorControl",new FormControl('',Validators.required));
+    this.formAuthorGroup.addControl("ImageControl",new FormControl('',Validators.required));
+    this.formAuthorGroup.addControl("PriceControl",new FormControl('',Validators.required));
+    this.formAuthorGroup.addControl("ActiveControl",new FormControl('',Validators.required));
+    this.formAuthorGroup.addControl("ContentControl",new FormControl('',Validators.required));
+    this.formAuthorGroup.addControl("PublisherControl",new FormControl('',Validators.required));
 
-        var validationcollection=[];
-        validationcollection.push(Validators.required);
-        validationcollection.push(Validators.pattern("^[0-9]{3,3}$"));
-        this.formCustomerGroup.addControl("CustomerCodeControl",new FormControl('',Validators.compose(validationcollection)));
+    var validationTitle=[];
+    validationTitle.push(Validators.required);
+    //validationTitle.push(Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"));
+        this.formAuthorGroup.addControl("TitleControl",new FormControl('',Validators.compose(validationTitle)));
 
+        var validationCategory=[];
+        validationCategory.push(Validators.required);
+       // validationCategory.push(Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"));
+        this.formAuthorGroup.addControl("CategoryControl",new FormControl('',Validators.compose(validationCategory)));   
+        
+        var validationAuthor=[];
+        validationAuthor.push(Validators.required);
+        //validationAuthor.push(Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"));
+        this.formAuthorGroup.addControl("AuthorControl",new FormControl('',Validators.compose(validationAuthor)));   
+
+        var validationImage=[];
+        validationImage.push(Validators.required);
+        //validationImage.push(Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"));
+        this.formAuthorGroup.addControl("ImageControl",new FormControl('',Validators.compose(validationImage)));   
+
+        var validationPrice=[];
+        validationPrice.push(Validators.required);
+        validationPrice.push(Validators.pattern("^[0-9]+$"));
+        this.formAuthorGroup.addControl("PriceControl",new FormControl('',Validators.compose(validationPrice)));   
+
+        var validationActive=[];
+        validationActive.push(Validators.required);
+       // validationActive.push(Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"));
+        this.formAuthorGroup.addControl("ActiveControl",new FormControl('',Validators.compose(validationActive)));   
+
+        
     }
 
 }

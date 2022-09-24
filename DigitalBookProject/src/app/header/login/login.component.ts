@@ -95,5 +95,8 @@ loginReader(){
   createNew(){
     this._router.navigate(['signup']);
   }
+  reloadLogin(){
+    window.location.reload();
+  }
 
 }

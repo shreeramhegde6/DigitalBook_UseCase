@@ -13,6 +13,8 @@ export class CreatbookComponent implements OnInit {
   isEdit:boolean=false;
   authorEmail:any=sessionStorage.getItem('userNames');
   addsuccess:boolean=false;
+  public selectedFile!:File;
+  public uploadData = new FormData();
 
   constructor(private http:HttpClient) {}
   
@@ -76,11 +78,24 @@ export class CreatbookComponent implements OnInit {
       Contents:this.FormData.contents,
       AuthorEmail:this.authorEmail
     };
+    debugger;
+    this.uploadData.append('Image', this.selectedFile, this.selectedFile.name);
+    this.uploadData.append('Title', formElements.Title);
+    this.uploadData.append('Price', formElements.Price);
+    this.uploadData.append('Category', formElements.Category);
+    
+    this.uploadData.append('Active', formElements.Active);
+    this.uploadData.append('Contents', formElements.Contents);
+    this.uploadData.append('Publisher', formElements.Publisher);
+    this.uploadData.append('AuthorEmail', formElements.AuthorEmail);
+
+
     if (this.isEdit) {
       this.http.put("https://localhost:44396/api/Author/bookupdate", UpdateformElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
     }
     else {
-      this.http.post("https://localhost:44396/api/Author/createbook", formElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
+      this.http.post("https://localhost:44396/api/Author/createbook-image", this.uploadData).subscribe(res => this.PostSuccess(res), res => console.log(res))
+     //this.http.post("https://localhost:44396/api/Author/createbook", formElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
     }
 
   
@@ -98,6 +113,26 @@ export class CreatbookComponent implements OnInit {
 
   reloadPage(){
     window.location.reload();
+  }
+
+  //Images
+  uploadFile(files:any){
+    if(files.length==0){
+      return ;
+    }
+  debugger;
+    let fileToUpload=<File>files[0];
+    this.selectedFile=<File>files[0];
+    //const formData=new FormData();
+
+    //formData.append('file',fileToUpload,fileToUpload.name);
+    this.uploadData.append('Image',fileToUpload,fileToUpload.name);
+
+    //this.http.post('https://localhost:44396/api/Books',formData).subscribe(res=>console.log(res),res=>console.log(res));
+  }
+
+  onFileChanged(event:any) {
+    this.selectedFile = event.target.files[0]
   }
 
 

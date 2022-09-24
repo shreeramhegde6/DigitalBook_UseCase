@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace DigitalBookAPI.Controllers
@@ -14,17 +16,17 @@ namespace DigitalBookAPI.Controllers
     {
         DigitalBookDBContext db = new DigitalBookDBContext();
 
-        [Route("createbook")]
-        [HttpPost]
-        public IActionResult Post([FromBody] TblCreatebook book)
-        {
-            book.Creationdate = DateTime.Today;
-            db.TblCreatebooks.Add(book);
+        //[Route("createbook")]
+        //[HttpPost]
+        //public IActionResult Post([FromBody] TblCreatebook book)
+        //{
+        //    book.Creationdate = DateTime.Today;
+        //    db.TblCreatebooks.Add(book);
 
-            db.SaveChanges();
-            var response = new { Status = "Success" };
-            return Ok(response);
-        }
+        //    db.SaveChanges();
+        //    var response = new { Status = "Success" };
+        //    return Ok(response);
+        //}
 
         [Route("getbook")]
         [HttpGet]
@@ -67,5 +69,53 @@ namespace DigitalBookAPI.Controllers
             var response = new { Status = "Success" };
             return Ok(response);
         }
+
+
+        //TEST Image
+        [Route("createbook-image")]
+        [HttpPost]
+        public IActionResult Post([FromForm] BookDataModel book)
+        {
+            book.Creationdate = DateTime.Today;
+            //db.TblCreatebooks.Add(book);
+
+            //db.SaveChanges();
+            //var response = new { Status = "Success" };
+            //return Ok(response);
+
+
+            var file = Request.Form.Files[0];
+            var foldername = "Images";
+            var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), foldername);
+            if (file.Length > 0)
+            {
+                var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                var fullPath = Path.Combine(pathToSave, fileName);
+                var dbPath = Path.Combine(foldername, fileName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                TblCreatebook obj = new TblCreatebook();
+                obj.Image = dbPath;
+                obj.Price = book.Price;
+                obj.Publisher = book.Publisher;
+                obj.Title = book.Title;
+                obj.Active = book.Active;
+                obj.AuthorEmail = book.AuthorEmail;
+                obj.Category = book.Category;
+                obj.Contents = book.Contents;
+                obj.Creationdate = book.Creationdate;
+                db.TblCreatebooks.Add(obj);
+                db.SaveChanges();
+                return Ok(new { dbPath });
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+        }
     }
+    
 }
