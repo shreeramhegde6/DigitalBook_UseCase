@@ -12,7 +12,7 @@ export class GridUiComponent implements OnInit {
  
   gridColumns:Array<any>= new Array<any>();
   gridData:Array<any> =new Array<any>();
-
+  imageUrl:string="https://localhost:44396/";
 
 
   ngOnInit(): void {

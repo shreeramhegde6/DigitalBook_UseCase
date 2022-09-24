@@ -70,7 +70,7 @@
     </div>
    
 <app-grid-ui
-[grid-columns]="[{'colName':'id'},{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'active'},{'colName':'contents'}]"
+[grid-columns]="[{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'contents'}]"
 [grid-data]="CreateBookModels" 
 (grid-selected)="EditAuthor($event)" (grid-delete)="DeleteAuthor($event)">
 </app-grid-ui>
