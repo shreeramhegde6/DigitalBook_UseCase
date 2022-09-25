@@ -9,6 +9,7 @@ import { CreateBook } from './createbookModel';
 })
 export class CreatbookComponent implements OnInit {
   FormData:CreateBook=new CreateBook();
+  //var x=this.FormData.formAuthorGroup;
   CreateBookModels:Array<CreateBook>=new Array<CreateBook>();
   isEdit:boolean=false;
   authorEmail:any=sessionStorage.getItem('userNames');

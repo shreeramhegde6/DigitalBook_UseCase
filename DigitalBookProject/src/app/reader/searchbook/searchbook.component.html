@@ -15,7 +15,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> <i style="width: 60px;">Author</i> </span>
             </div>
-            <input [(ngModel)]="FormData.authorEmail" class="form-control" placeholder="Enter Catogory" type="text">
+            <input [(ngModel)]="FormData.author" class="form-control" placeholder="Enter AuthorName" type="text">
           </div> <!-- form-group end.// -->
 
           <div class="form-group input-group">
@@ -24,14 +24,14 @@
             </div>
             <!--<input [(ngModel)]="FormData.image" class="form-control" placeholder="Enter Image" type="text">-->
             <!--<label for="formFileDisabled" class="form-label">example</label>-->
-            <input [(ngModel)]="FormData.image" class="form-control" type="text">
+            <input [(ngModel)]="FormData.publisher" class="form-control" type="text">
           </div> <!-- form-group end.// -->
 
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> <i style="width: 60px;">ReleaseDate</i> </span>
             </div>
-            <input [(ngModel)]="FormData.price" class="form-control" placeholder="Enter Price" type="text">
+            <input [(ngModel)]="FormData.release" class="form-control" placeholder="Enter Price" type="text">
           </div> <!-- form-group end.// -->
 
           
@@ -40,15 +40,15 @@
         </article>
         <div class="row justify-content-end">
           <div class="form-group col-sm-6"> <button type="button" class="btn-block btn-primary"
-                  (click)="GetStatus()">Save and Create</button> </div>
+                  (click)="GetStatus()">Search</button> </div>
       </div>
       </div>
 
     </div>
   </div>
  
-<app-grid-ui
-[grid-columns]="[{'colName':'id'},{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'active'},{'colName':'contents'}]"
-[grid-data]="CreateBookModels" 
-(grid-selected)="BuyBook($event)" (grid-delete)="bookBuy($event)">
-</app-grid-ui>
+<app-reader-ui
+[grid-columns]="[{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'contents'}]"
+[grid-data]="SearchModels" 
+ (grid-delete)="bookBuy($event)">
+</app-reader-ui>

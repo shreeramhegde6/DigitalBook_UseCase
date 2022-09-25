@@ -1,0 +1,38 @@
+<div class="container-lg">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8" style="color: blue;"><h2>Books Details</h2></div>                    
+                </div>
+            </div>
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th *ngFor="let col of gridColumns">
+             {{col.colName}} 
+            </th>
+    </tr>
+    <tr *ngFor="let colObj of gridData">
+       <!-- <td *ngFor="let col of gridColumns">
+        {{colObj[col.colName]}}
+        </td> -->
+        <td>{{colObj.title}}</td>
+        <td>{{colObj.category}}</td>
+        <td><img src="{{imageUrl}}{{colObj.image}}" style="width: 40px;height: 40px;" alt="No Image"></td>
+        <td>{{colObj.price}}</td>
+        <td>{{colObj.publisher}}</td>
+        <td>{{colObj.contents}}</td>
+        
+            <td>
+                <!-- <a style="color: brown;" (click)="selectedGrid(colObj)" class="btn btn-primary">Edit</a> -->
+                <a style="color: brown;" (click)="buyGrid(colObj)" class="btn btn-primary">BUY</a>
+                </td>
+            
+    </tr>
+</table>
+</div>
+</div>
+</div>     
