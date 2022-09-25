@@ -2,7 +2,7 @@ import { FormGroup,Validators,FormBuilder,FormControl } from "@angular/forms";
 export class SearchBookModel{
     title:string='';
     publisher:string='';
-    author:string='';
+    category:string='';
 
     release:string='';
     id:number=0;

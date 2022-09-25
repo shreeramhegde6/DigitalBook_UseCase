@@ -87,5 +87,15 @@ namespace DigitalBookAPI.Controllers
             }
             return response;
         }
+
+        [HttpPost]
+        [Route("searchbook")]
+        public IEnumerable<TblCreatebook>SearchBook([FromBody]SearchModel searchbook)
+        {
+            DateTime curr = Convert.ToDateTime(searchbook.Creationdate);
+            List<TblCreatebook> test = new List<TblCreatebook>();
+            test=db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category==searchbook.Category && x.Creationdate == curr).Select(x=>x).ToList();
+            return test;
+        }
     }
 }

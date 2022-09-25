@@ -13,7 +13,9 @@ export class SearchbookComponent implements OnInit {
    FormData:SearchBookModel=new SearchBookModel();
   SearchModels:Array<SearchBookModel>=new Array<SearchBookModel>();
   isEdit:boolean=false;
-  authorEmail:string='shree@a.com'
+  authorEmail:string='shree@a.com';
+
+  releaseDate:string='';
   constructor(private http:HttpClient) {}
   
 
@@ -26,31 +28,31 @@ export class SearchbookComponent implements OnInit {
 
   ngOnInit(){
 
-    this.GetStatus();
+   // this.GetStatus();
 
     
   }
 
   searchBook() {
 
- 
+    this.releaseDate=this.FormData.release.toString();
 
-    var UpdateformElements={
+    var SearchformElements={
      
       Title:this.FormData.title,
       
       
       
       Publisher:this.FormData.publisher,
-      Author:this.FormData.author,
-      Release:this.FormData.release,
+      Category:this.FormData.category,
+      CreationDate:this.releaseDate,
      
     };
 
 
    
       
-      this.http.put("https://localhost:44396/api/Author/bookupdate", UpdateformElements).subscribe(res => this.Success(res), res => console.log(res))
+      this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)})
     
     
   }
@@ -63,6 +65,10 @@ export class SearchbookComponent implements OnInit {
      Success(input: any) {
     console.log(input);
      this.SearchModels = input;
+   }
+
+   searchFail(){
+     alert("Nodat found");
    }
 
 }
