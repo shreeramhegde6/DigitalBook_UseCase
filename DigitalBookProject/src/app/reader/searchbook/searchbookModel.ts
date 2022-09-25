@@ -3,6 +3,9 @@ export class SearchBookModel{
     title:string='';
     publisher:string='';
     category:string='';
+    price:string='';
+    image:string='';
+    contents:string='';
 
     release:string='';
     id:number=0;

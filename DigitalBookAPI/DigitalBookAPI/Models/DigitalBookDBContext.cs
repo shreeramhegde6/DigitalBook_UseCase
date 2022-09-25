@@ -17,6 +17,7 @@ namespace DigitalBookAPI.Models
         {
         }
 
+        public virtual DbSet<TblBuybook> TblBuybooks { get; set; }
         public virtual DbSet<TblCreatebook> TblCreatebooks { get; set; }
         public virtual DbSet<TblImage> TblImages { get; set; }
         public virtual DbSet<TblLogin> TblLogins { get; set; }
@@ -35,6 +36,25 @@ namespace DigitalBookAPI.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<TblBuybook>(entity =>
+            {
+                entity.ToTable("tblBuybook");
+
+                entity.Property(e => e.Contents)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Image)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Price)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
 
             modelBuilder.Entity<TblCreatebook>(entity =>
             {

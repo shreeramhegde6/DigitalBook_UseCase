@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CreateBook } from 'src/app/author/creatbook/createbookModel';
+import { MainserviceService } from 'src/app/mainservice.service';
 import { SearchBookModel } from './searchbookModel';
 
 @Component({
@@ -17,9 +18,13 @@ export class SearchbookComponent implements OnInit {
   showElements:boolean=false;
   searchFailAlert:boolean=false;
   emptyFill:boolean=false;
+  buyEvents:boolean=false;
+  booksid:number=100;
+  bookprice:string='2900';
+  //bookValueArray:Array<IterableIterator<SearchBookModel>>=[];
 
   releaseDate:string='';
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient,private _auth:MainserviceService) {}
   
 
     
@@ -55,23 +60,32 @@ export class SearchbookComponent implements OnInit {
 
    
       
-      this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)})
-    
+      this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)});
+         
     
   }
   
-  BuyBook(input:any){}
+  
   bookBuy(input:any){
+    this.buyEvents=true;
+    //this.bookValueArray=this.SearchModels.values();
+
     
   }
 
      Success(input: any) {
-    console.log(input);
-    this.showElements=true;
-     this.SearchModels = input;
+      this.SearchModels = input;
+
      if(this.SearchModels.length==0){
       this.searchFailAlert=true;
      }
+     else{
+      console.log(input);
+      this.showElements=true;
+       this.SearchModels = input;
+       this.bookprice=this.SearchModels[0].price;
+     }
+
    }
 
    searchFail(){
