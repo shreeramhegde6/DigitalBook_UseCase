@@ -14,6 +14,9 @@ export class SearchbookComponent implements OnInit {
   SearchModels:Array<SearchBookModel>=new Array<SearchBookModel>();
   isEdit:boolean=false;
   authorEmail:string='shree@a.com';
+  showElements:boolean=false;
+  searchFailAlert:boolean=false;
+  emptyFill:boolean=false;
 
   releaseDate:string='';
   constructor(private http:HttpClient) {}
@@ -64,11 +67,19 @@ export class SearchbookComponent implements OnInit {
 
      Success(input: any) {
     console.log(input);
+    this.showElements=true;
      this.SearchModels = input;
+     if(this.SearchModels.length==0){
+      this.searchFailAlert=true;
+     }
    }
 
    searchFail(){
-     alert("Nodat found");
+    this.emptyFill=true;
+     //alert("Nodat found");
    }
+   reloadPage(){
+    window.location.reload();
+  }
 
 }

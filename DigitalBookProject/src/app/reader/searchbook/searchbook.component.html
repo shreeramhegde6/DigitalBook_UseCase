@@ -42,13 +42,22 @@
           <div class="form-group col-sm-6"> <button type="button" class="btn-block btn-primary"
                   (click)="searchBook()">Search</button> </div>
       </div>
+
+      <div *ngIf="searchFailAlert" class="alert alert-danger" role="alert">
+        <strong>No Books Found!!</strong> <a  class="alert-link" (click)="reloadPage()">"Click here to Try with Different Options"</a>
+      </div>
+      <div *ngIf="emptyFill" class="alert alert-danger" role="alert">
+        <strong>All Search fields are MANDATORY!!</strong> <a  class="alert-link" (click)="reloadPage()">"Click here to Try Agai"</a>
+      </div>
+
       </div>
 
     </div>
   </div>
- 
+ <div *ngIf="showElements">
 <app-reader-ui
 [grid-columns]="[{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'contents'}]"
 [grid-data]="SearchModels" 
  (grid-delete)="bookBuy($event)">
 </app-reader-ui>
+</div>
