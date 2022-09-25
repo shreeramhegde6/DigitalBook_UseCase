@@ -19,7 +19,7 @@ export class SearchbookComponent implements OnInit {
   searchFailAlert:boolean=false;
   emptyFill:boolean=false;
   buyEvents:boolean=false;
-  booksid:number=100;
+  booksid:number=0;
   bookprice:string='2900';
   //bookValueArray:Array<IterableIterator<SearchBookModel>>=[];
 
@@ -84,8 +84,14 @@ export class SearchbookComponent implements OnInit {
       this.showElements=true;
        this.SearchModels = input;
        this.bookprice=this.SearchModels[0].price;
+       this.booksid=this.SearchModels[0].id;
+
      }
 
+   }
+
+   payFunc(){
+     alert("bokkbought!!");
    }
 
    searchFail(){
