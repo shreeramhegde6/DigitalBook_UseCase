@@ -5,6 +5,7 @@ import { HomeComponent } from './header/home/home.component';
 import { LoginComponent } from './header/login/login.component';
 import { SignupComponent } from './header/signup/signup.component';
 import { SearchbookComponent } from './reader/searchbook/searchbook.component';
+import { ViewbookComponent } from './reader/viewbook/viewbook.component';
 
 const routes: Routes = [
   {path:'',component : LoginComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path : 'signup', component : SignupComponent},
    {path:'home',component : LoginComponent},
    {path:'searchbook',component : SearchbookComponent},
+   {path:'viewbook',component : ViewbookComponent},
    
   // {path : 'signupadd', loadChildren :()=>import('../signup/signup.module').then(m=>m.SignupModule)}
   

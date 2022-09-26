@@ -90,17 +90,17 @@ namespace DigitalBookAPI.Controllers
 
         [HttpPost]
         [Route("searchbook")]
-        public IEnumerable<TblCreatebook>SearchBook([FromBody]SearchModel searchbook)
+        public IEnumerable<TblCreatebook> SearchBook([FromBody] SearchModel searchbook)
         {
             DateTime curr = Convert.ToDateTime(searchbook.Creationdate);
             List<TblCreatebook> test = new List<TblCreatebook>();
-            test=db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category==searchbook.Category && x.Creationdate == curr).Select(x=>x).ToList();
+            test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr).Select(x => x).ToList();
             return test;
         }
 
         [HttpPost]
         [Route("buybook")]
-        public IActionResult Buybook([FromBody]TblBuybook bookadding)
+        public IActionResult Buybook([FromBody] TblBuybook bookadding)
         {
             IActionResult responce = Unauthorized();
             try
@@ -120,6 +120,15 @@ namespace DigitalBookAPI.Controllers
             }
             return responce;
 
+        }
+
+        [HttpPost]
+        [Route("viewbook")]
+        public IEnumerable<TblBuybook> ViewBook(string readername){
+
+            return db.TblBuybooks.Where(x => x.User == readername).Select(x => x).ToList();
+        
+        
         }
     }
 }

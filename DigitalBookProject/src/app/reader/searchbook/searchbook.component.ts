@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CreateBook } from 'src/app/author/creatbook/createbookModel';
 import { MainserviceService } from 'src/app/mainservice.service';
 import { SearchBookModel } from './searchbookModel';
@@ -22,12 +23,13 @@ export class SearchbookComponent implements OnInit {
   booksid:number=0;
   bookprice:string='2900';
   cardNumber:string='';
+  payView:boolean=false;
 
   userEmail:any=sessionStorage.getItem('userNames');
   //bookValueArray:Array<IterableIterator<SearchBookModel>>=[];
 
   releaseDate:string='';
-  constructor(private http:HttpClient,private _auth:MainserviceService) {}
+  constructor(private http:HttpClient,private _auth:MainserviceService,private _rout:Router) {}
   
 
     
@@ -115,9 +117,14 @@ export class SearchbookComponent implements OnInit {
 
    }
 
+   //payment Sucucess
    buySuccess(input :any){
-     alert(input);
+     this.payView=true;
    }
+   postbuySuccess(){
+    this._rout.navigate(['viewbook']);
+   }
+
    buyFail(input:any){
      alert(input);
    }

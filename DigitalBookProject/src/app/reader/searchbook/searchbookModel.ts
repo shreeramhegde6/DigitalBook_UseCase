@@ -11,7 +11,7 @@ export class SearchBookModel{
     id:number=0;
 
 
-    formReader:FormGroup;
+   public formReader:FormGroup;
     constructor(){
     var _builder=new FormBuilder();
     this.formReader=_builder.group({});
