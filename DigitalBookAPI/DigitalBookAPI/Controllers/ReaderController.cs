@@ -106,7 +106,8 @@ namespace DigitalBookAPI.Controllers
             try
             {
                 //var bookAdd = db.TblCreatebooks.Where(x => x.Id == bookadding.I).FirstOrDefault();
-                //bookadding.Image=
+                //string[] img= bookadding.Image.Replace('\','/');
+                //bookadding.Image = "";
                 db.TblBuybooks.Add(bookadding);
                 db.SaveChanges();
                 responce = Ok(new { Status = "Success" });
