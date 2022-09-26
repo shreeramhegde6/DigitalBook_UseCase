@@ -21,6 +21,9 @@ export class SearchbookComponent implements OnInit {
   buyEvents:boolean=false;
   booksid:number=0;
   bookprice:string='2900';
+  cardNumber:string='';
+
+  userEmail:any=sessionStorage.getItem('userNames');
   //bookValueArray:Array<IterableIterator<SearchBookModel>>=[];
 
   releaseDate:string='';
@@ -91,7 +94,32 @@ export class SearchbookComponent implements OnInit {
    }
 
    payFunc(){
-     alert("bokkbought!!");
+     var ModelHolder=this.SearchModels[0];
+     var buyRequest={
+       BookID:ModelHolder.id,
+       Price:ModelHolder.price,
+       Contents:ModelHolder.contents,
+       Image:ModelHolder.image,
+       User:this.userEmail
+
+
+     };
+
+
+    this.http.post("https://localhost:44396/api/Reader/buybook", buyRequest).subscribe(res => { this.buySuccess(res)}, res => {this.buyFail(res);console.log(res)});
+    
+
+
+    //alert(this.cardNumber);
+
+
+   }
+
+   buySuccess(input :any){
+     alert(input);
+   }
+   buyFail(input:any){
+     alert(input);
    }
 
    searchFail(){

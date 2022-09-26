@@ -97,5 +97,28 @@ namespace DigitalBookAPI.Controllers
             test=db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category==searchbook.Category && x.Creationdate == curr).Select(x=>x).ToList();
             return test;
         }
+
+        [HttpPost]
+        [Route("buybook")]
+        public IActionResult Buybook([FromBody]TblBuybook bookadding)
+        {
+            IActionResult responce = Unauthorized();
+            try
+            {
+                //var bookAdd = db.TblCreatebooks.Where(x => x.Id == bookadding.I).FirstOrDefault();
+                //bookadding.Image=
+                db.TblBuybooks.Add(bookadding);
+                db.SaveChanges();
+                responce = Ok(new { Status = "Success" });
+
+
+            }
+            catch
+            {
+                responce = Unauthorized();
+            }
+            return responce;
+
+        }
     }
 }

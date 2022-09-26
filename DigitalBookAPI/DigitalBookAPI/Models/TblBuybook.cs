@@ -12,5 +12,6 @@ namespace DigitalBookAPI.Models
         public string Price { get; set; }
         public string Contents { get; set; }
         public string Image { get; set; }
+        public string User { get; set; }
     }
 }
