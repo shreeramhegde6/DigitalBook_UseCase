@@ -1,4 +1,5 @@
 <div *ngIf="!reading" >
+  <h2>Welcome To Your Reading House</h2>
 <table class="table table-bordered">
     <thead>
       <tr>
@@ -17,14 +18,14 @@
              <td>{{colObj.publisher}}</td>
              <td>{{colObj.contents}}</td> -->
              <td>
-                <a style="color: brown;" (click)="selectedGrid(colObj)" class="btn btn-primary">Read</a>
+                <a style="color: brown;" (click)="selectedGrid(colObj)" class="btn btn-primary">Take A Break</a>
                 </td>
       
     </tbody>
   </table>
 </div>
 <div *ngIf="reading">
-  hhh
+  
   <div class="alert alert-primary" role="alert">
     <strong>Thank You Mr/Ms " {{currentUser}} "</strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
   </div>

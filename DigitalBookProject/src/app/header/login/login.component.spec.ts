@@ -1,4 +1,9 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MainserviceService } from 'src/app/mainservice.service';
 
 import { LoginComponent } from './login.component';
 
@@ -8,7 +13,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      imports:[HttpClientModule,RouterTestingModule],
+      providers:[HttpClient,MainserviceService]
     })
     .compileComponents();
   });
@@ -19,7 +26,7 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should have', () => {
     expect(component).toBeTruthy();
   });
 });
