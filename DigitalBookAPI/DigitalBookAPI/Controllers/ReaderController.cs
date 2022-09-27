@@ -122,11 +122,12 @@ namespace DigitalBookAPI.Controllers
 
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("viewbook")]
-        public IEnumerable<TblBuybook> ViewBook(string readername){
+        public IEnumerable<TblBuybook> Get(string readername){
+            var ret= db.TblBuybooks.Where(x => x.User == readername).Select(x => x).ToList();
 
-            return db.TblBuybooks.Where(x => x.User == readername).Select(x => x).ToList();
+            return ret;
         
         
         }
