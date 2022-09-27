@@ -12,6 +12,7 @@ export class ViewbookComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
   currentUser:any=sessionStorage.getItem('userNames');
+  reading:boolean=false;
 
   ngOnInit(): void {
     this.getUserbook();
@@ -28,6 +29,9 @@ export class ViewbookComponent implements OnInit {
   }
 
   selectedGrid(input:any){
+    this.reading=true;
+    
+
 
   }
   postSuccess(input:any){

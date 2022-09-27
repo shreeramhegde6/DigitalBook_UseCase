@@ -1,8 +1,9 @@
+<div *ngIf="!reading" >
 <table class="table table-bordered">
     <thead>
       <tr>
 
-        <th scope="col">Image</th>
+        <th scope="col">CoverPage</th>
         <th scope="col">Content</th>
       </tr>
     </thead>
@@ -21,3 +22,10 @@
       
     </tbody>
   </table>
+</div>
+<div *ngIf="reading">
+  hhh
+  <div class="alert alert-primary" role="alert">
+    <strong>Thank You Mr/Ms " {{currentUser}} "</strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+  </div>
+</div>
