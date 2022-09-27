@@ -25,14 +25,21 @@
                     <p><strong> Enter Your Author Account Credentials</strong></p>
   
                     <div class="form-outline mb-4">
+                      <label class="form-label" for="form2Example11">Username</label>
                       <input type="email" [(ngModel)]=UserData.userName formControlName="UserNameControl" name="user" id="form2Example11" class="form-control"
                         placeholder="email address" />
-                      <label class="form-label" for="form2Example11">Username</label>
+                      
+                      <span style="color: brown;" class="validspan" *ngIf="!UserData.formCustomerGroup.controls['UserNameControl'].valid && 
+                      UserData.formCustomerGroup.controls['UserNameControl']?.touched"> Please enter a valid email</span>
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="password" [(ngModel)]=UserData.password formControlName="PasswordControl" name="pass" id="form2Example22" class="form-control" />
                       <label class="form-label" for="form2Example22">Password</label>
+                      <input type="password" [(ngModel)]=UserData.password formControlName="PasswordControl" name="pass" id="form2Example22" class="form-control" />
+                      
+                      <span style="color: brown;" class="validspan" *ngIf="!UserData.formCustomerGroup.controls['PasswordControl'].valid && 
+                      UserData.formCustomerGroup.controls['PasswordControl']?.touched"> Please Complete 4 digit PIN</span>
+                    
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
@@ -92,14 +99,22 @@
                     <p><strong> Enter Your Reader Account Credentials</strong></p>
   
                     <div class="form-outline mb-4">
+                      <label class="form-label" for="form2Example11">Username</label>
                       <input type="email" [(ngModel)]=UserData.userName formControlName="UserNameControl"  name="user" id="form2Example11" class="form-control"
                         placeholder="email address" />
-                      <label class="form-label" for="form2Example11">Username</label>
+                        <span style="color: brown;" class="validspan" *ngIf="!UserData.formCustomerGroup.controls['UserNameControl'].valid && 
+                        UserData.formCustomerGroup.controls['UserNameControl']?.touched"> Please enter a valid email</span>
+                      
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="password" [(ngModel)]=UserData.password formControlName="PasswordControl" name="pass" id="form2Example22" class="form-control" />
                       <label class="form-label" for="form2Example22">Password</label>
+                      <input type="password" [(ngModel)]=UserData.password formControlName="PasswordControl" name="pass" id="form2Example22" class="form-control" />
+                      <span style="color: brown;" class="validspan" *ngIf="!UserData.formCustomerGroup.controls['PasswordControl'].valid && 
+                      UserData.formCustomerGroup.controls['PasswordControl']?.touched"> Please Complete 4 digit PIN</span>
+                    
+                      
+                      
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
