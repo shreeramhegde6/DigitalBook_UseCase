@@ -57,7 +57,7 @@
   </div>
  <div *ngIf="showElements">
 <app-reader-ui
-[grid-columns]="[{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'contents'}]"
+[grid-columns]="[{'colName':'image'},{'colName':'price'}]"
 [grid-data]="SearchModels" 
  (grid-buy)="bookBuy($event)">
 </app-reader-ui>
