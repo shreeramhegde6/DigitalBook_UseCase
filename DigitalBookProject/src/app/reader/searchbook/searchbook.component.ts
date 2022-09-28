@@ -24,6 +24,7 @@ export class SearchbookComponent implements OnInit {
   bookprice:string='2900';
   cardNumber:string='';
   payView:boolean=false;
+  payViewFail:boolean=false;
 
   userEmail:any=sessionStorage.getItem('userNames');
   //bookValueArray:Array<IterableIterator<SearchBookModel>>=[];
@@ -119,14 +120,15 @@ export class SearchbookComponent implements OnInit {
 
    //payment Sucucess
    buySuccess(input :any){
-     this.payView=true;
+    this._rout.navigate(['viewbook']);
    }
    postbuySuccess(){
     this._rout.navigate(['viewbook']);
    }
 
    buyFail(input:any){
-     alert(input);
+    this.payViewFail=true;
+     //alert(input);
    }
 
    searchFail(){

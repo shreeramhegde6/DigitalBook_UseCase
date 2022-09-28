@@ -53,10 +53,11 @@ loginReader(){
   this._service.loginReader(userObject).subscribe(
     res=>{
      // localStorage.setItem('token',res.token);
-     this.correctLogin=true;
-     this.wrong=false;
+    // this.correctLogin=true;
+     //this.wrong=false;
      sessionStorage.setItem('token',"logged");
      sessionStorage.setItem('userNames',this.UserData.userName);
+     this._router.navigate(['searchbook']);
      
       
     },
@@ -80,10 +81,12 @@ loginReader(){
     this._service.loginUser(userObject).subscribe(
       res=>{
        // localStorage.setItem('token',res.token);
-       this.correctLogin=true;
+       //this.correctLogin=true;
        this.wrong=false;
+       localStorage.setItem('token',res.token);
        sessionStorage.setItem('token',"logged");
        sessionStorage.setItem('userNames',this.UserData.userName);
+       this._router.navigate(['createbook']);
        
         
       },

@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
     if(sessionStorage.getItem('token')!=null){
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('userNames');
+    localStorage.removeItem('token');
       this._router.navigate(['']);
     }
   }

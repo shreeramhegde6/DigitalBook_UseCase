@@ -98,8 +98,8 @@
               
                 <button class="btn btn-outline-light btn-lg px-5"  (click)="payFunc()">PAY</button>
 
-                <div *ngIf="payView" class="alert alert-primary" role="alert">
-                  <strong>Payment Success</strong> <a  class="alert-link" href="viewbook">Click here to  Read</a>
+                <div *ngIf="payViewFail" class="alert alert-primary" role="alert">
+                  <strong>Payment Failed</strong> <a  class="alert-link" href="searchbook">Click here to  Read</a>
                 </div>
               
                 <div class="d-flex justify-content-center text-center mt-4 pt-1">

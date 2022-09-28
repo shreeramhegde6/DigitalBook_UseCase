@@ -20,7 +20,7 @@ _searchBookUrl="https://localhost:44396/api/Reader/searchbook";
 //this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements)
 
 loginUser(login:any){
-  return this.http.post(this._loginUrl,login);
+  return this.http.post<any>(this._loginUrl,login);
 }
 
 loginReader(login:any){
