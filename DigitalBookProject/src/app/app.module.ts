@@ -9,6 +9,7 @@ import { ReaderModule } from './reader/reader.module';
 import { HeaderModule } from './header/header.module';
 import { MainserviceService } from './mainservice.service';
 import { GridUiModule } from './grid-ui/grid-ui.module';
+import { AllserviceService } from './allservice.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { GridUiModule } from './grid-ui/grid-ui.module';
  
     
   ],
-  providers: [MainserviceService],
+  providers: [MainserviceService,AllserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

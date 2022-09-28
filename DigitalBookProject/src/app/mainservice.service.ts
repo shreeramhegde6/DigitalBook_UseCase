@@ -27,6 +27,10 @@ loginReader(login:any){
   return this.http.post(this._loginReaderUrl,login);
 }
 
+checkAuth(){
+  return !!sessionStorage.getItem('userNames');
+}
+
 searchBookservice<Observable>(searchelement:any){
   return this.http.post<Iterable<ISearch>>(this._searchBookUrl,searchelement);
 

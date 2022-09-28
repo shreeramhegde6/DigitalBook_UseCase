@@ -29,4 +29,18 @@ describe('LoginComponent', () => {
   it('should have', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('Validate Welcome',()=>{
+  //   const fixture = TestBed.createComponent(LoginComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.nativeElement as HTMLElement;
+  //   expect(compiled.querySelector('h4')?.textContent).toContain('We are The DigiBooks Team Please Login to Read');
+  // });
+
+  it('check loadingOptions', () => {
+    const fixture = TestBed.createComponent(LoginComponent);
+    const lcomp = fixture.componentInstance;
+    expect(lcomp.loadbtn).toEqual(true);
+  });
+
 });
