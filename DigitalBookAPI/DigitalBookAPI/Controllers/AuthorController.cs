@@ -106,6 +106,8 @@ namespace DigitalBookAPI.Controllers
                 obj.Category = book.Category;
                 obj.Contents = book.Contents;
                 obj.Creationdate = book.Creationdate;
+
+                if (book.Active == "true") { obj.ActiveFlag = true; } else obj.ActiveFlag = false;
                 db.TblCreatebooks.Add(obj);
                 db.SaveChanges();
                 return Ok(new { dbPath });

@@ -29,6 +29,16 @@
             <td>
                 <a style="color: brown;" (click)="selectedGrid(colObj)" class="btn btn-primary">Edit</a>
                 <a style="color: brown;" (click)="deleteGrid(colObj)" class="btn btn-primary">delete</a>
+                <div *ngIf="colObj.activeFlag;else other_content ">
+                    <a class="btn btn-primary " title="block" data-toggle="tooltip" (click)="blockGrid(colObj)">block</a>
+                </div>                                
+                <ng-template #other_content>
+                    <div>
+                    <a class="btn btn-primary " title="unblock" data-toggle="tooltip" (click)="unblockGrid(colObj)">unblock</a>
+                    </div>
+                </ng-template>
+
+                
                 </td>
             
     </tr>

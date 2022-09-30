@@ -8,6 +8,7 @@ export class CreateBook{
     active:string='';
     contents:string='';
     authorEmail:string='';
+    activeFlag:boolean=true;
     id:number=0;
 
 

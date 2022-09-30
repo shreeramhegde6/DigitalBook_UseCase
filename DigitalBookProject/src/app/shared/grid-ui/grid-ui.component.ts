@@ -50,4 +50,17 @@ export class GridUiComponent implements OnInit {
     this.emitemitterd.emit(_dselected);
   }
 
+
+  //block-unBLOCKtesting
+  @Output("book-block")
+  _blockemitemitter:EventEmitter<any>=new EventEmitter<any>();
+  blockGrid(_block:any){
+    this._blockemitemitter.emit(_block);
+  }
+  @Output("book-unblock")
+  _unblockemitemitter:EventEmitter<any>=new EventEmitter<any>();
+  unblockGrid(_unblock:any){
+    this._unblockemitemitter.emit(_unblock);
+  }
+
 }

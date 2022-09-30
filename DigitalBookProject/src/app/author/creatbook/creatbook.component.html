@@ -46,7 +46,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Active</i> </span>
           </div>
-          <input [(ngModel)]="FormData.active" class="form-control" placeholder="YES or NO" type="tel">
+          <input [(ngModel)]="FormData.active" class="form-control" placeholder="true or false" type="tel">
         </div> <!-- form-group end.// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
@@ -75,5 +75,5 @@
 <app-grid-ui
 [grid-columns]="[{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'contents'}]"
 [grid-data]="CreateBookModels" 
-(grid-selected)="EditAuthor($event)" (grid-delete)="DeleteAuthor($event)">
+(grid-selected)="EditAuthor($event)" (grid-delete)="DeleteAuthor($event)" (book-block)="BlockGrid($event)" (book-unblock)="UnBlockGrid($event)">
 </app-grid-ui>

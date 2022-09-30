@@ -19,6 +19,8 @@ export class CreatbookComponent implements OnInit {
   public uploadData = new FormData();
   DefaultimagePut:string='Images/logo.jpg';
 
+  blockId:any=0;
+
   constructor(private http:HttpClient) {}
   
 
@@ -152,5 +154,21 @@ export class CreatbookComponent implements OnInit {
     this.selectedFile = event.target.files[0]
   }
 
+
+  //block-unblock test
+
+  BlockGrid(inputdata:any){
+    this.blockId=inputdata.id;  
+    alert("blocked");
+    //this._service.BlockGridService(this.blockId);
+      this.GetStatus();
+   
+  }
+  UnBlockGrid(inputdata:any){
+    this.blockId=inputdata.id;  
+    //this._service.UnBlockGridService(this.blockId);
+    alert("unblocked");
+      this.GetStatus();    
+  }
 
 }
