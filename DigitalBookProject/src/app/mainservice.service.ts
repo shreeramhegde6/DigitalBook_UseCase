@@ -27,6 +27,10 @@ loginReader(login:any){
   return this.http.post(this._loginReaderUrl,login);
 }
 
+unblockbook(unblockID:any){
+  return this.http.put("https://localhost:44396/api/Books/book-unblock",unblockID);
+}
+
 checkAuth(){
   return !!sessionStorage.getItem('userNames');
 }

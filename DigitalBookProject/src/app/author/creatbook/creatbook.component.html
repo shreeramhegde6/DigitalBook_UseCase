@@ -73,7 +73,7 @@
 </div>
 
 <app-grid-ui
-[grid-columns]="[{'colName':'title'},{'colName':'category'},{'colName':'image'},{'colName':'price'},{'colName':'publisher'},{'colName':'contents'}]"
+[grid-columns]="[{'colName':''},{'colName':'Title'},{'colName':'Category'},{'colName':'Rate .RS'},{'colName':'Publisher'},{'colName':'contents'}]"
 [grid-data]="CreateBookModels" 
 (grid-selected)="EditAuthor($event)" (grid-delete)="DeleteAuthor($event)" (book-block)="BlockGrid($event)" (book-unblock)="UnBlockGrid($event)">
 </app-grid-ui>

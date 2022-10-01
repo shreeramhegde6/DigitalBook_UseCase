@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MainserviceService } from 'src/app/mainservice.service';
 import { CreateBook } from './createbookModel';
 
 @Component({
@@ -20,8 +21,9 @@ export class CreatbookComponent implements OnInit {
   DefaultimagePut:string='Images/logo.jpg';
 
   blockId:any=0;
+  unblockId:any=0;
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient,private _service:MainserviceService) {}
   
 
     
@@ -159,16 +161,20 @@ export class CreatbookComponent implements OnInit {
 
   BlockGrid(inputdata:any){
     this.blockId=inputdata.id;  
-    alert("blocked");
-    //this._service.BlockGridService(this.blockId);
-      this.GetStatus();
+    //debugger;
+    this.http.put("https://localhost:44396/api/Books/book-block",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+    this.GetStatus();
+    window.location.reload();
    
   }
   UnBlockGrid(inputdata:any){
-    this.blockId=inputdata.id;  
+    this.unblockId=inputdata.id;  
     //this._service.UnBlockGridService(this.blockId);
-    alert("unblocked");
-      this.GetStatus();    
+    this.http.put("https://localhost:44396/api/Books/book-unblock",this.unblockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+    //alert(this.unblockId);
+    this.GetStatus();
+    window.location.reload();
+      //this.GetStatus();    
   }
 
 }
