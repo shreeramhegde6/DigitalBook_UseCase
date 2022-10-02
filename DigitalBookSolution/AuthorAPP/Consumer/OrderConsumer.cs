@@ -1,5 +1,6 @@
 ﻿using AuthorAPP.Models;
 using MassTransit;
+using Shared.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,17 +26,7 @@ namespace AuthorAPP.Consumer
             return Task.CompletedTask;
         }
 
-        //{
-        //    CustomerDBContext db = new CustomerDBContext();
-        //    public Task Consume(ConsumeContext<Order> context)
-        //    {
-        //        var data = context.Message;
-        //        var productdata = db.TblProducts.Where(x => x.Id == data.ProductId).FirstOrDefault();
-        //        productdata.Inventory = productdata.Inventory - data.Inventory;
-        //        db.TblProducts.Update(productdata);
-        //        db.SaveChanges();
-        //        return Task.CompletedTask;
-        //    }
+   
 
     }
 }

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "D:\Dot-Net-Sep-2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorAPP", "AuthorAPP\AuthorAPP.csproj", "{F2CA102B-27DA-4BB2-AC01-C0DEEC8866B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderAPP", "ReaderAPP\ReaderAPP.csproj", "{A3C4244E-537A-4618-9E59-F66E7BAAED4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReaderAPP", "ReaderAPP\ReaderAPP.csproj", "{A3C4244E-537A-4618-9E59-F66E7BAAED4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Model", "Shared.Model\Shared.Model.csproj", "{00B33D2F-CD05-493A-8CAB-499515CB9DE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A3C4244E-537A-4618-9E59-F66E7BAAED4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3C4244E-537A-4618-9E59-F66E7BAAED4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3C4244E-537A-4618-9E59-F66E7BAAED4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B33D2F-CD05-493A-8CAB-499515CB9DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B33D2F-CD05-493A-8CAB-499515CB9DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B33D2F-CD05-493A-8CAB-499515CB9DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B33D2F-CD05-493A-8CAB-499515CB9DE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

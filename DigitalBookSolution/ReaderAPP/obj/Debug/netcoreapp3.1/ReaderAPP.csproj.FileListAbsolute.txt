@@ -87,3 +87,5 @@ C:\Users\cogdotnet1708\Desktop\NEWMicroserviceUseCase\DigitalBookSolution\Reader
 C:\Users\cogdotnet1708\Desktop\NEWMicroserviceUseCase\DigitalBookSolution\ReaderAPP\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Users\cogdotnet1708\Desktop\NEWMicroserviceUseCase\DigitalBookSolution\ReaderAPP\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 C:\Users\cogdotnet1708\Desktop\NEWMicroserviceUseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\ReaderAPP.csproj.CopyComplete
+C:\Users\cogdotnet1708\Desktop\NEWMicroserviceUseCase\DigitalBookSolution\ReaderAPP\bin\Debug\netcoreapp3.1\Shared.Model.dll
+C:\Users\cogdotnet1708\Desktop\NEWMicroserviceUseCase\DigitalBookSolution\ReaderAPP\bin\Debug\netcoreapp3.1\Shared.Model.pdb

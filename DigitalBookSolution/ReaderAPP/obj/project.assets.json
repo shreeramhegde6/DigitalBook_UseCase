@@ -2461,6 +2461,16 @@
         "runtime": {
           "bin/placeholder/Common.dll": {}
         }
+      },
+      "Shared.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Shared.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shared.Model.dll": {}
+        }
       }
     }
   },
@@ -8255,6 +8265,11 @@
       "type": "project",
       "path": "D:\\Dot-Net-Sep-2022-Conz-main\\CustomerAPP\\Common\\Common.csproj",
       "msbuildProject": "D:\\Dot-Net-Sep-2022-Conz-main\\CustomerAPP\\Common\\Common.csproj"
+    },
+    "Shared.Model/1.0.0": {
+      "type": "project",
+      "path": "../Shared.Model/Shared.Model.csproj",
+      "msbuildProject": "../Shared.Model/Shared.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8267,6 +8282,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.17",
+      "Shared.Model >= 1.0.0",
       "Swashbuckle.AspNetCore.Swagger >= 6.4.0",
       "Swashbuckle.AspNetCore.SwaggerGen >= 6.4.0",
       "Swashbuckle.AspNetCore.SwaggerUI >= 6.4.0"
@@ -8307,6 +8323,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj": {
+              "projectPath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj"
+            },
             "D:\\Dot-Net-Sep-2022-Conz-main\\CustomerAPP\\Common\\Common.csproj": {
               "projectPath": "D:\\Dot-Net-Sep-2022-Conz-main\\CustomerAPP\\Common\\Common.csproj"
             }

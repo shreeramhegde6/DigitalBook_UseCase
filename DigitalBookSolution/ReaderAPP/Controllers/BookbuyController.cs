@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using ReaderAPP.Models;
+using Shared.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
