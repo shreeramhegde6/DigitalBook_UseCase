@@ -15,7 +15,15 @@
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Catogory</i> </span>
           </div>
-          <input [(ngModel)]="FormData.category" class="form-control" placeholder="Enter Catogory" type="text">
+          <select [(ngModel)]="FormData.category" class="form-select" name="category" id="category" placeholder="Select Category">
+            
+            <option value="Environmental">Environmental</option>
+            <option value="Comics">Comics</option>
+            <option value="Novel">Novel</option>
+            <option value="General">General</option>
+          </select>
+          <br><br>
+          <!-- <input [(ngModel)]="FormData.category" class="form-control" id ="category" name ="category" placeholder="Enter Catogory" type="text"> -->
         </div> <!-- form-group end.// -->
 
         <div class="form-group input-group">
@@ -46,7 +54,13 @@
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Active</i> </span>
           </div>
-          <input [(ngModel)]="FormData.active" class="form-control" placeholder="true or false" type="tel">
+          <div>
+              <input [(ngModel)]="FormData.active" type="radio" id="true" name="active" value="true">
+              <label for="html">Yes</label><br>
+              <input [(ngModel)]="FormData.active" type="radio" id="false" name="active" value="false">
+              <label for="css">No</label><br>
+          </div>
+          <!-- <input [(ngModel)]="FormData.active" class="form-control" placeholder="true or false" type="tel"> -->
         </div> <!-- form-group end.// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
