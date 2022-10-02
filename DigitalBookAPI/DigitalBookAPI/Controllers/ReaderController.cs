@@ -94,7 +94,17 @@ namespace DigitalBookAPI.Controllers
         {
             DateTime curr = Convert.ToDateTime(searchbook.Creationdate);
             List<TblCreatebook> test = new List<TblCreatebook>();
-            test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr).Select(x => x).ToList();
+            if(searchbook.Publisher=="" && searchbook.Title=="" && searchbook.Category == "")
+            {
+                test = db.TblCreatebooks.Where(x => x.Creationdate == curr).Select(x => x).ToList();
+            }
+            else
+            {
+                test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr).Select(x => x).ToList();
+            }
+           // test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr).Select(x => x).ToList();
+
+            //test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr).Select(x => x).ToList();
             return test;
         }
 
