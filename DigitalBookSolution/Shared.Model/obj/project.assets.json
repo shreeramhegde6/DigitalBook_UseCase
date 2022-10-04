@@ -1,7 +1,8 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {},
+    ".NETCoreApp,Version=v3.1/win-x64": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
@@ -15,11 +16,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj",
+      "projectUniqueName": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj",
       "projectName": "Shared.Model",
-      "projectPath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj",
+      "projectPath": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj",
       "packagesPath": "C:\\Users\\cogdotnet1708\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\obj\\",
+      "outputPath": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\Shared.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -69,6 +70,11 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
       }
     }
   }

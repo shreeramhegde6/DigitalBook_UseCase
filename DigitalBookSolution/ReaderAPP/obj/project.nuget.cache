@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jUkbnuMRH+B4+TR0D76AoSjU3LN8wRUmqhPEzSFRr0RDP8jLW5I+GFLDDzw22g9UUV8UGm5533Q3vZdk7Aka6g==",
+  "dgSpecHash": "ygNB81ftIU3s5Db6Vewqn68u8iuxVBPjgnOrZQb9zLC6BchI/jaqg48T3BxavuZnfQeMe6sye1StLGZG6IYUfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\ReaderAPP\\ReaderAPP.csproj",
+  "projectFilePath": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\ReaderAPP\\ReaderAPP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cogdotnet1708\\.nuget\\packages\\automatonymous\\5.0.1\\automatonymous.5.0.1.nupkg.sha512",
     "C:\\Users\\cogdotnet1708\\.nuget\\packages\\consul\\1.6.10.7\\consul.1.6.10.7.nupkg.sha512",

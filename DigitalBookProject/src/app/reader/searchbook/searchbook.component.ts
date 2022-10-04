@@ -139,4 +139,9 @@ export class SearchbookComponent implements OnInit {
     window.location.reload();
   }
 
+  //readbookbutton
+  readBook(){
+    this._rout.navigate(['viewbook']);
+  }
+
 }

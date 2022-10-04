@@ -60,6 +60,7 @@ export class CreatbookComponent implements OnInit {
   }
 
   Add() {
+    this.addFail=true;
 
     var formElements={
       Title:this.FormData.title,
@@ -111,7 +112,7 @@ export class CreatbookComponent implements OnInit {
       this.uploadData.append('Publisher', formElements.Publisher);
       this.uploadData.append('AuthorEmail', formElements.AuthorEmail);
   
-      this.http.post("https://localhost:44396/api/Author/createbook-image", this.uploadData).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res))
+      this.http.post("https://localhost:44396/api/Author/createbook-image", this.uploadData).subscribe(res => this.PostSuccess(res), res => {this.PostFailure(res);this.addFail=true;})
      //this.http.post("https://localhost:44396/api/Author/createbook", formElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
     }
 
@@ -119,6 +120,7 @@ export class CreatbookComponent implements OnInit {
   }
   PostSuccess(input: any) {
     this.addsuccess=true;
+    this.addFail=false;
     //window.location.reload();
     this.GetStatus();
   }

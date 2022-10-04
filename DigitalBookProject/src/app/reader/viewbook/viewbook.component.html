@@ -1,11 +1,18 @@
-<div *ngIf="!reading" >
+<div *ngIf="returnbool">
+  
+  <div class="alert alert-primary" role="alert">
+    <strong>Sorry to hear Mr/Ms <i> "{{currentUser}}"</i> <br> Your Refund Request has been Generated !! <br> REQ.NO : #RETOCT{{deleteId}}   <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+  </div>
+</div>
+
+<div *ngIf="!readingInv" >
   <h2>Welcome To Your Reading House</h2>
-<table class="table table-bordered">
+<table class="table table-striped">
     <thead>
       <tr>
 
         <th scope="col">CoverPage</th>
-        <th scope="col">Content</th>
+        <th scope="col" style="width: 70%;">Content</th>
       </tr>
     </thead>
     <tbody>
@@ -18,15 +25,22 @@
              <td>{{colObj.publisher}}</td>
              <td>{{colObj.contents}}</td> -->
              <td>
-                <a style="color: brown;" (click)="selectedGrid(colObj)" class="btn btn-primary">View Invoice</a>
+                <a style="color: brown;" (click)="selectedGrid(colObj.bookId)" class="btn btn-primary">View Invoice</a>
+               <a style="color: brown;" (click)="returnBook(colObj.id)" class="btn btn-primary">Return</a>
                 </td>
       
     </tbody>
   </table>
 </div>
-<div *ngIf="reading">
+<div *ngIf="readingInv">
   
   <div class="alert alert-primary" role="alert">
     <strong>Thank You Mr/Ms <i> "{{currentUser}}"</i> for Buying the book  PLease Find the invoice Deatils here <br>INV NUMBER : <i>DGB113{{invoID}}</i>  <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
   </div>
 </div>
+<!-- <div *ngIf="returnbool">
+  
+  <div class="alert alert-primary" role="alert">
+    <strong>Sorry to hear Mr/Ms <i> "{{currentUser}}"</i> for returning  the book  <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+  </div>
+</div> -->

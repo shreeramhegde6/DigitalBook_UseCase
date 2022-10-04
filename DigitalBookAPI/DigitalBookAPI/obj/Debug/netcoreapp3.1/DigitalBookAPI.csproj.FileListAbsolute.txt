@@ -67,4 +67,3 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookAPI\DigitalBookAPI
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookAPI\DigitalBookAPI\obj\Debug\netcoreapp3.1\DigitalBookAPI.pdb
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookAPI\DigitalBookAPI\obj\Debug\netcoreapp3.1\DigitalBookAPI.genruntimeconfig.cache
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookAPI\DigitalBookAPI\obj\Debug\netcoreapp3.1\DigitalBookAPI.csproj.AssemblyReference.cache
-C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookAPI\DigitalBookAPI\obj\Debug\netcoreapp3.1\DigitalBookAPI.csproj.CopyComplete

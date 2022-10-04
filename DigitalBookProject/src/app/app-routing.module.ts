@@ -9,7 +9,7 @@ import { SearchbookComponent } from './reader/searchbook/searchbook.component';
 import { ViewbookComponent } from './reader/viewbook/viewbook.component';
 
 const routes: Routes = [
-  {path:'',component : LoginComponent},
+  {path:'',component : HomeComponent},
   {path:'createbook',canActivate:[AllserviceService],component : CreatbookComponent},
   {path : 'signup', component : SignupComponent},
    {path:'home',component : LoginComponent},

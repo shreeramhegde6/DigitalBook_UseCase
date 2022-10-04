@@ -141,5 +141,17 @@ namespace DigitalBookAPI.Controllers
         
         
         }
+
+        [HttpDelete]
+        [Route("returnbook")]
+        public IActionResult Delete(int id)
+        {
+            var data = db.TblBuybooks.Where(x => x.Id == id).FirstOrDefault();
+            db.TblBuybooks.Remove(data);
+            db.SaveChanges();
+            //
+            var response = new { Status = "Success" };
+            return Ok(response);
+        }
     }
 }

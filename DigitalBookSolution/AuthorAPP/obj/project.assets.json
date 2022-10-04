@@ -8296,11 +8296,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\AuthorAPP\\AuthorAPP.csproj",
+      "projectUniqueName": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\AuthorAPP\\AuthorAPP.csproj",
       "projectName": "AuthorAPP",
-      "projectPath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\AuthorAPP\\AuthorAPP.csproj",
+      "projectPath": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\AuthorAPP\\AuthorAPP.csproj",
       "packagesPath": "C:\\Users\\cogdotnet1708\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\AuthorAPP\\obj\\",
+      "outputPath": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\AuthorAPP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -8323,8 +8323,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj": {
-              "projectPath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj"
+            "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj": {
+              "projectPath": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj"
             },
             "D:\\Dot-Net-Sep-2022-Conz-main\\CustomerAPP\\Common\\Common.csproj": {
               "projectPath": "D:\\Dot-Net-Sep-2022-Conz-main\\CustomerAPP\\Common\\Common.csproj"

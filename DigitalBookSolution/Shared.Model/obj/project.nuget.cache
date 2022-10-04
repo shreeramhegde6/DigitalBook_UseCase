@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U8EPr3f4PSr8xnBFdq5+d2xoskiu/Hy6M2ECw3Hy10k0oWrxtwmOq0y2EihcFcqxEMNL3alQFhti6wrxqAh/aQ==",
+  "dgSpecHash": "pS1KWwq1fJtpn+m+p/vqw3yQxA6LxjfEIGW1n3FJFWq8yaFgOsgYlxeaU6rIaFmhZd68rnx2xtTIkxvwawJlnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cogdotnet1708\\Desktop\\NEWMicroserviceUseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj",
+  "projectFilePath": "C:\\Users\\cogdotnet1708\\Desktop\\DigitalBook_UseCase\\DigitalBookSolution\\Shared.Model\\Shared.Model.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
