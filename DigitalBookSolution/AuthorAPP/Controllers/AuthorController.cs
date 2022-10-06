@@ -33,7 +33,7 @@ namespace AuthorAPP.Controllers
         public IEnumerable<TblCreatebook> Get(string cname)
         {
             //return db.TblCreatebooks;
-            return db.TblCreatebooks.Where(x => x.AuthorEmail == cname).Select(x => x).ToList();
+            return db.TblCreatebooks.Where(x => x.AuthorEmail == cname).Select(x => x).OrderByDescending(x => x.Id).ToList();
         }
 
         //public IEnumerable<>

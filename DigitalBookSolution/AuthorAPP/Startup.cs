@@ -88,11 +88,11 @@ namespace AuthorAPP
 
             app.UseRouting();
             app.UseStaticFiles();
-            //app.UseStaticFiles(new StaticFileOptions()
-            //{
-            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
-            //    RequestPath = new PathString("/Images")
-            //});
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
+                RequestPath = new PathString("/Images")
+            });
             app.UseSwagger();
             app.UseSwaggerUI();
             app.UseAuthentication();

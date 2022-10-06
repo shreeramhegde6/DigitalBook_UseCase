@@ -31,6 +31,7 @@ namespace ReaderAPP.Controllers
             //IActionResult responce = Unauthorized();
             try
             {
+                order.Buydate = DateTime.Now;
                 //var bookAdd = db.TblCreatebooks.Where(x => x.Id == bookadding.I).FirstOrDefault();
                 //string[] img= bookadding.Image.Replace('\','/');
                 //bookadding.Image = "";

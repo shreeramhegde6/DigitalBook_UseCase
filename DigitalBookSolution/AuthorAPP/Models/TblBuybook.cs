@@ -13,5 +13,6 @@ namespace AuthorAPP.Models
         public string Contents { get; set; }
         public string Image { get; set; }
         public string User { get; set; }
+        public DateTime? Buydate { get; set; }
     }
 }

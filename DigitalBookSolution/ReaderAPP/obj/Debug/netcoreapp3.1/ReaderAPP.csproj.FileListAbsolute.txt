@@ -176,7 +176,6 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\staticwebassets\ReaderAPP.StaticWebAssets.xml
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\scopedcss\bundle\ReaderAPP.styles.css
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\ReaderAPP.RazorTargetAssemblyInfo.cache
-C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\ReaderAPP.csproj.CopyComplete
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\ReaderAPP.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\ReaderAPP.pdb
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\ReaderAPP\obj\Debug\netcoreapp3.1\ReaderAPP.genruntimeconfig.cache

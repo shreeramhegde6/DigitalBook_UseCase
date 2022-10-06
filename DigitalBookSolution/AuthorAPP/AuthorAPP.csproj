@@ -25,5 +25,9 @@
     <ProjectReference Include="D:\Dot-Net-Sep-2022-Conz-main\CustomerAPP\Common\Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
 
 </Project>
