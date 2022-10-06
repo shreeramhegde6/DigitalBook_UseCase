@@ -41,6 +41,8 @@ namespace DigitalBookAPI.Models
             {
                 entity.ToTable("tblBuybook");
 
+                entity.Property(e => e.Buydate).HasColumnType("datetime");
+
                 entity.Property(e => e.Contents)
                     .IsRequired()
                     .HasMaxLength(50)

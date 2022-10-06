@@ -1,7 +1,15 @@
 <div *ngIf="returnbool">
   
   <div class="alert alert-primary" role="alert">
-    <strong>Sorry to hear Mr/Ms <i> "{{currentUser}}"</i> <br> Your Refund Request has been Generated !! <br> REQ.NO : #RETOCT{{deleteId}}   <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+    <strong>Mr/Ms <i> "{{currentUser}}"</i> <br> Your Refund Request has been Generated !! <br> REQ.NO : #RETOCT{{deleteId}}   <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+    <br><a  class="alert-link" href="viewbook">Continue to Read the Cooks..</a>
+    <br>
+  </div>
+</div>
+<div *ngIf="returnboolfail">
+  
+  <div class="alert alert-danger" role="alert">
+    <strong>Sorry Mr/Ms <i> "{{currentUser}}"</i> <br>  Refund Request is allowed ONLY  within  24hrs  <br></strong> <a  class="alert-link" href="viewbook">Yes I Understand</a>
   </div>
 </div>
 
@@ -26,7 +34,7 @@
              <td>{{colObj.contents}}</td> -->
              <td>
                 <a style="color: brown;" (click)="selectedGrid(colObj.bookId)" class="btn btn-primary">View Invoice</a>
-               <a style="color: brown;" (click)="returnBook(colObj.id)" class="btn btn-primary">Return</a>
+               <a style="color: brown;" (click)="returnBook(colObj.id)" class="btn btn-primary">Cancel</a>
                 </td>
       
     </tbody>
@@ -35,7 +43,9 @@
 <div *ngIf="readingInv">
   
   <div class="alert alert-primary" role="alert">
-    <strong>Thank You Mr/Ms <i> "{{currentUser}}"</i> for Buying the book  PLease Find the invoice Deatils here <br>INV NUMBER : <i>DGB113{{invoID}}</i>  <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+    <strong>Hello User  PLease Find the invoice Details of Your Book <br>Customer ID :<i> "{{currentUser}}"</i>  <br>INV NUMBER : <i>DGB113{{invoID}}</i>  <br></strong> <a  class="alert-link" href="viewbook">Continue Reading the Book..</a>
+    <br><br> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+  
   </div>
 </div>
 <!-- <div *ngIf="returnbool">

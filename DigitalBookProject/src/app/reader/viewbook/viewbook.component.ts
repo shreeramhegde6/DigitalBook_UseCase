@@ -16,6 +16,7 @@ export class ViewbookComponent implements OnInit {
   invoID:any;
   deleteId:any;
   returnbool:boolean=false;
+  returnboolfail:boolean=false;
 
   ngOnInit(): void {
     this.getUserbook();
@@ -50,13 +51,19 @@ console.log(input);
   returnBook(input:any){
     this.deleteId=input;
     //this.http.delete("https://localhost:44396/api/Author?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
-    this.http.delete("https://localhost:44396/api/Reader/returnbook?id="+this.deleteId).subscribe(res => this.PostSuccessRet(), res => console.log(res));
+    this.http.delete("https://localhost:44396/api/Reader/returnbook?id="+this.deleteId).subscribe(res => this.PostSuccessRet(), res =>this.PostfailRet());
 
-    this.returnbool=true;
+    //this.returnbool=true;
 
   }
   PostSuccessRet(){
     //alert("success");
     this.returnbool=true;
+  }
+  PostfailRet(){
+    //alert("failure");
+    this.returnbool=false;
+    this.returnboolfail=true;
+    //this.returnbool=true;
   }
 }

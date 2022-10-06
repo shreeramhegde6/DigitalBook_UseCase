@@ -14,10 +14,25 @@
 
           <div class="form-group input-group">
             <div class="input-group-prepend">
+              <span class="input-group-text"> <i style="width: 60px;">Catogory</i> </span>
+            </div>
+            <select [(ngModel)]="FormData.category" class="form-select" name="category" id="category" placeholder="Select Category">
+              
+              <option value="Environmental">Environmental</option>
+              <option value="Comics">Comics</option>
+              <option value="Novel">Novel</option>
+              <option value="General">General</option>
+            </select>
+            <br><br>
+            <!-- <input [(ngModel)]="FormData.category" class="form-control" id ="category" name ="category" placeholder="Enter Catogory" type="text"> -->
+          </div> 
+
+          <!-- <div class="form-group input-group">
+            <div class="input-group-prepend">
               <span class="input-group-text"> <i style="width: 60px;">Category</i> </span>
             </div>
             <input [(ngModel)]="FormData.category" class="form-control" placeholder="Enter Category" type="text">
-          </div> <!-- form-group end.// -->
+          </div>  -->
 
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -61,7 +76,7 @@
   </div>
  <div *ngIf="showElements">
 <app-reader-ui
-[grid-columns]="[{'colName':'image'},{'colName':'price'}]"
+[grid-columns]="[{'colName':'image'},{'colName':'title'},{'colName':'price'}]"
 [grid-data]="SearchModels" 
  (grid-buy)="bookBuy($event)">
 </app-reader-ui>

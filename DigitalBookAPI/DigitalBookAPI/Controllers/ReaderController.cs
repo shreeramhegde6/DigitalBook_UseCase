@@ -92,15 +92,23 @@ namespace DigitalBookAPI.Controllers
         [Route("searchbook")]
         public IEnumerable<TblCreatebook> SearchBook([FromBody] SearchModel searchbook)
         {
-            DateTime curr = Convert.ToDateTime(searchbook.Creationdate);
+
+            DateTime curr = new DateTime();
+            if (searchbook.Creationdate != "") { curr = Convert.ToDateTime(searchbook.Creationdate); }
+            //DateTime curr = Convert.ToDateTime(searchbook.Creationdate);
             List<TblCreatebook> test = new List<TblCreatebook>();
             if(searchbook.Publisher=="" && searchbook.Title=="" && searchbook.Category == "")
             {
-                test = db.TblCreatebooks.Where(x => x.Creationdate == curr).Select(x => x).ToList();
+                test = db.TblCreatebooks.Where(x => x.Creationdate == curr && x.ActiveFlag == true).Select(x => x).ToList();
+            }
+
+            else if (searchbook.Publisher == "" && searchbook.Title == "" && searchbook.Creationdate=="")
+            {
+                test = db.TblCreatebooks.Where(x => x.Category == searchbook.Category && x.ActiveFlag == true).Select(x => x).ToList();
             }
             else
             {
-                test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr).Select(x => x).ToList();
+                test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr && x.ActiveFlag == true).Select(x => x).ToList();
             }
            // test = db.TblCreatebooks.Where(x => x.Title == searchbook.Title && x.Publisher == searchbook.Publisher && x.Category == searchbook.Category && x.Creationdate == curr).Select(x => x).ToList();
 
@@ -115,6 +123,7 @@ namespace DigitalBookAPI.Controllers
             IActionResult responce = Unauthorized();
             try
             {
+                bookadding.Buydate = DateTime.Now;
                 //var bookAdd = db.TblCreatebooks.Where(x => x.Id == bookadding.I).FirstOrDefault();
                 //string[] img= bookadding.Image.Replace('\','/');
                 //bookadding.Image = "";
@@ -146,12 +155,22 @@ namespace DigitalBookAPI.Controllers
         [Route("returnbook")]
         public IActionResult Delete(int id)
         {
+
+            IActionResult response = Unauthorized();
             var data = db.TblBuybooks.Where(x => x.Id == id).FirstOrDefault();
-            db.TblBuybooks.Remove(data);
-            db.SaveChanges();
-            //
-            var response = new { Status = "Success" };
-            return Ok(response);
+            var checkDate = data.Buydate;
+            var diffHours = DateTime.Now - checkDate;
+            if (diffHours.Value.Hours <= 24 && diffHours.Value.Days<=0) {
+                db.TblBuybooks.Remove(data);
+                db.SaveChanges();
+               
+                response = Ok(new { Status = "Success" });
+            }
+            else
+            {
+                response = Unauthorized();
+            }
+            return response;
         }
     }
 }

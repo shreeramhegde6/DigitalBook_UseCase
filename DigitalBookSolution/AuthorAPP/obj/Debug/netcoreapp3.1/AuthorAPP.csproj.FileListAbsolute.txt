@@ -175,7 +175,7 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\staticwebassets\AuthorAPP.StaticWebAssets.xml
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\scopedcss\bundle\AuthorAPP.styles.css
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.RazorTargetAssemblyInfo.cache
-C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.csproj.CopyComplete
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.pdb
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.genruntimeconfig.cache
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.csproj.CopyComplete

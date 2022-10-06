@@ -118,6 +118,48 @@ namespace AuthorAPP.Controllers
             }
 
         }
+
+
+        [HttpPut]
+        [Route("book-block")]
+        public IActionResult BookBlock([FromBody] int id)
+        {
+            try
+            {
+                var bookblobk = db.TblCreatebooks.Where(s => s.Id == id).FirstOrDefault();
+                bookblobk.ActiveFlag = false;
+                db.TblCreatebooks.Update(bookblobk);
+                db.SaveChanges();
+                var response = new { Status = "Success" };
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return Ok(ex);
+            }
+
+
+        }
+        [HttpPut]
+        [Route("book-unblock")]
+        public IActionResult BookUnBlock([FromBody] int id)
+        {
+            try
+            {
+                var bookunblobk = db.TblCreatebooks.Where(s => s.Id == id).FirstOrDefault();
+                bookunblobk.ActiveFlag = true;
+                db.TblCreatebooks.Update(bookunblobk);
+                db.SaveChanges();
+                var response = new { Status = "Success" };
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return Ok(ex);
+            }
+
+
+        }
     }
 
 }
