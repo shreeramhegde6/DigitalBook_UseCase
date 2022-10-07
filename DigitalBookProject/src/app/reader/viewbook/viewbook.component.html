@@ -2,7 +2,7 @@
   
   <div class="alert alert-primary" role="alert">
     <strong>Mr/Ms <i> "{{currentUser}}"</i> <br> Your Refund Request has been Generated !! <br> REQ.NO : #RETOCT{{deleteId}}   <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
-    <br><a  class="alert-link" href="viewbook">Continue to Read the Cooks..</a>
+    <br><a  class="alert-link" href="viewbook">Continue to Read the Books..</a>
     <br>
   </div>
 </div>
@@ -27,13 +27,13 @@
         <tr *ngFor="let colObj of SearchModels">
              
              
-          <td><img src="{{imageUrl}}{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td>
+          <td><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td>
              <td>{{colObj.contents}}</td>
              <!-- <td>{{colObj.price}}</td>
              <td>{{colObj.publisher}}</td>
              <td>{{colObj.contents}}</td> -->
              <td>
-                <a style="color: brown;" (click)="selectedGrid(colObj.bookId)" class="btn btn-primary">View Invoice</a>
+                <a style="color: brown;" (click)="selectedGrid(colObj.bookId,colObj.price)" class="btn btn-primary">View Invoice</a>
                <a style="color: brown;" (click)="returnBook(colObj.id)" class="btn btn-primary">Cancel</a>
                 </td>
       
@@ -43,8 +43,8 @@
 <div *ngIf="readingInv">
   
   <div class="alert alert-primary" role="alert">
-    <strong>Hello User  PLease Find the invoice Details of Your Book <br>Customer ID :<i> "{{currentUser}}"</i>  <br>INV NUMBER : <i>DGB113{{invoID}}</i>  <br></strong> <a  class="alert-link" href="viewbook">Continue Reading the Book..</a>
-    <br><br> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+    <strong>DIGIBOOK Online Book Store Invoice  >><br>===========================<br>*Customer ID :<i> "{{currentUser}}"</i>  <br>*INVOICE N.O : <i>DGB113{{invoID}}</i>  <br></strong> <strong>*Total Amount : <i>{{priceId}}</i></strong> <br><strong>============================</strong> <br><a  class="alert-link" href="viewbook">Continue Reading the Book..</a>
+    <br><br> <a  class="alert-link" href="searchbook">Click here to Search For New Books</a>
   
   </div>
 </div>

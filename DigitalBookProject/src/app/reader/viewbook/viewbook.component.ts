@@ -13,6 +13,7 @@ export class ViewbookComponent implements OnInit {
   constructor(private http:HttpClient) { }
   currentUser:any=sessionStorage.getItem('userNames');
   readingInv:boolean=false;
+  priceId:any;
   invoID:any;
   deleteId:any;
   returnbool:boolean=false;
@@ -28,20 +29,24 @@ export class ViewbookComponent implements OnInit {
 
   getUserbook(){
     //=this.currentUser.toString();
-    this.http.get("https://localhost:44396/api/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
-    //this.http.post("https://localhost:44396/api/Reader/viewbook",this.currentUser)
+    //this.http.get("https://localhost:44396/api/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
+    
+    this.http.get("https://localhost:44363/api/gateway/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
+    
   }
 
-  selectedGrid(input:any){
+  selectedGrid(input:any,inprice:any){
     this.SearchModels=input;
     this.invoID=input;
+    this.priceId=inprice;
     this.readingInv=true;
     this.returnbool=false;
 
   }
   postSuccess(input:any){
+    
 this.SearchModels=input;
-this.invoID=this.SearchModels[0].id;
+
 console.log(input);
 
   }
@@ -51,7 +56,7 @@ console.log(input);
   returnBook(input:any){
     this.deleteId=input;
     //this.http.delete("https://localhost:44396/api/Author?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
-    this.http.delete("https://localhost:44396/api/Reader/returnbook?id="+this.deleteId).subscribe(res => this.PostSuccessRet(), res =>this.PostfailRet());
+    this.http.delete("https://localhost:44363/api/gateway/Reader/returnbook?id="+this.deleteId).subscribe(res => this.PostSuccessRet(), res =>this.PostfailRet());
 
     //this.returnbool=true;
 

@@ -5,8 +5,8 @@
 gateway_loginUrl="https://localhost:44363/api/gateway/Login/authorlogin";
 
 2.registerauthor
-//_regUrl="https://localhost:44396/api/Login/register-author";
-_regUrl="https://localhost:44363/api/gateway/Login/register-author";
+//"https://localhost:44396/api/Login/register-author";
+gatew:: "https://localhost:44363/api/gateway/Login/register-author";
 
 3. getbookauthor
 this.http.get("https://localhost:44396/api/Author/getbook?cname="+this.authorEmail)
@@ -33,6 +33,33 @@ GATEWAY: this.http.put("https://localhost:44363/api/gateway/Author/bookupdate", 
  this.http.put("https://localhost:44396/api/Books/book-unblock",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
    gateway ::  this.http.put("https://localhost:44363/api/gateway/Author/book-unblock",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
  
-****************************************
+***********Reader*****************************
 ***************************************
+
+1.8 loginreader
+ _loginReaderUrl="https://localhost:44396/api/Reader/readerlogin";
+gatewy:: https://localhost:44363/api/gateway/Reader/readerlogin
+
+1.9 register-reader
+https://localhost:44363/api/gateway/Reader/register-reader
+
+
+1.10 searchbook
+this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)});
+gatewy:: this.http.post("https://localhost:44363/api/gateway/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)});
  
+
+1.11 viewbook
+gateway :: this.http.get("https://localhost:44363/api/gateway/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
+    
+1.12 return book
+
+gateway ::  this.http.delete("https://localhost:44396/api/gateway/Reader/returnbook?id="+this.deleteId)
+
+========================
+Bookbuy
+================
+13
+buy book
+//this.http.post("https://localhost:44396/api/Reader/buybook", buyRequest)
+gateway ::  this.http.post("https://localhost:44363/api/gateway/BookBuy/buybook", buyRequest)

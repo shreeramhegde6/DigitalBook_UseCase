@@ -110,7 +110,8 @@ export class SearchbookComponent implements OnInit {
      };
 
 
-    this.http.post("https://localhost:44396/api/Reader/buybook", buyRequest).subscribe(res => { this.buySuccess(res)}, res => {this.buyFail(res);console.log(res)});
+    //this.http.post("https://localhost:44396/api/Reader/buybook", buyRequest).subscribe(res => { this.buySuccess(res)}, res => {this.buyFail(res);console.log(res)});
+    this.http.post("https://localhost:44363/api/gateway/BookBuy/buybook", buyRequest).subscribe(res => { this.buySuccess(res)}, res => {this.buyFail(res);console.log(res)});
     
 
 
