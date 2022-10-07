@@ -1,0 +1,38 @@
+********Author API's*******
+
+1.LoginAuthor
+//_loginUrl="https://localhost:44396/api/Login/authorlogin";
+gateway_loginUrl="https://localhost:44363/api/gateway/Login/authorlogin";
+
+2.registerauthor
+//_regUrl="https://localhost:44396/api/Login/register-author";
+_regUrl="https://localhost:44363/api/gateway/Login/register-author";
+
+3. getbookauthor
+this.http.get("https://localhost:44396/api/Author/getbook?cname="+this.authorEmail)
+gateway::this.http.get("https://localhost:44363/api/gateway/Author/getbook?cname="+this.authorEmail)
+
+3.createbook-image
+ this.http.post("https://localhost:44396/api/Author/createbook-image", this.uploadData)
+gatwat::  this.http.post("https://localhost:44363/api/gateway/Author/createbook-image", this.uploadData)
+
+4.bookupdate
+//this.http.put("https://localhost:44396/api/Author/bookupdate", UpdateformElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
+GATEWAY: this.http.put("https://localhost:44363/api/gateway/Author/bookupdate", UpdateformElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
+
+5.Deleteauthor
+//this.http.delete("https://localhost:44396/api/Author?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
+ gateway:: this.http.delete("https://localhost:44363/api/gateway/Author/deletebook?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
+  
+6.book-block
+ this.http.put("https://localhost:44396/api/Books/book-block",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+   gateway ::  this.http.put("https://localhost:44363/api/gateway/Author/book-block",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+   
+7.unblock
+
+ this.http.put("https://localhost:44396/api/Books/book-unblock",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+   gateway ::  this.http.put("https://localhost:44363/api/gateway/Author/book-unblock",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+ 
+****************************************
+***************************************
+ 

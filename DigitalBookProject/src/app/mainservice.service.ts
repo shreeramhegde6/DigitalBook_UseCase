@@ -11,8 +11,11 @@ export class MainserviceService {
 
   constructor(private http:HttpClient,private _route:Router) { }
 
-_loginUrl="https://localhost:44396/api/Login/authorlogin";
-_regUrl="https://localhost:44396/api/Login/register-author";
+//_loginUrl="https://localhost:44396/api/Login/authorlogin";
+_loginUrl="https://localhost:44363/api/gateway/Login/authorlogin";
+//_regUrl="https://localhost:44396/api/Login/register-author";
+_regUrl="https://localhost:44363/api/gateway/Login/register-author";
+
 
 _loginReaderUrl="https://localhost:44396/api/Reader/readerlogin";
 _searchBookUrl="https://localhost:44396/api/Reader/searchbook";

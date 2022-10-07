@@ -178,3 +178,4 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.pdb
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.genruntimeconfig.cache
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.csproj.CopyComplete

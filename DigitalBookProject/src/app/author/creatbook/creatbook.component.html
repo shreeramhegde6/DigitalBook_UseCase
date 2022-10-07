@@ -76,10 +76,10 @@
                 (click)="Add()">Save and Create</button> </div>
     </div>
     <div *ngIf="addsuccess" class="alert alert-primary" role="alert">
-      <strong>Book Added Successfully!!</strong> <a  class="alert-link" (click)="reloadPage()">"ADD More..?"</a>
+      <strong>Success!!</strong> <a  class="alert-link" (click)="reloadPage()">"Continue.."</a>
     </div>
     <div *ngIf="addFail" class="alert alert-danger" role="alert">
-      <strong>All Fields are Mandatory!!</strong> <a  class="alert-link" (click)="reloadPage()">"Click here to Try it Again"</a>
+      <strong>Validating the Inputs....</strong>
     </div>
     </div>
 
