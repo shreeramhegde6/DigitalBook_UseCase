@@ -1,4 +1,5 @@
 ﻿using AuthorAPP.Models;
+using Azure.Storage.Blobs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -69,6 +70,115 @@ namespace AuthorAPP.Controllers
             var response = new { Status = "Success" };
             return Ok(response);
         }
+
+        //blob storage
+
+        [Route("createbook-blobimage")]
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromForm] BookDataModel book)
+        {
+
+            book.Creationdate = DateTime.Today;
+
+            var file = Request.Form.Files[0];
+            var pathToSave = Directory.GetCurrentDirectory();
+            if (file.Length > 0)
+            {
+                try
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var _filename = Path.GetFileNameWithoutExtension(fileName);
+                    fileName = _filename + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg";
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = fileName;
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    string connectionstring = "DefaultEndpointsProtocol=https;AccountName=digibookblob;AccountKey=JsuGh6bpRBA6u7DiD+38ia2isr1m7VQBX7YcrlKCtmTfSbtbUqubTWj6puNE/M1koiSH1d1SjWu6+ASt1mZmhA==;EndpointSuffix=core.windows.net";
+                    string containerName = "images";
+                    BlobContainerClient container = new BlobContainerClient(connectionstring, containerName);
+                    var blob = container.GetBlobClient(fileName);
+                    var blobstream = System.IO.File.OpenRead(fileName);
+                    await blob.UploadAsync(blobstream);
+                    var URI = blob.Uri.AbsoluteUri;
+
+                    //mypart
+                    TblCreatebook obj = new TblCreatebook();
+                    obj.Image = dbPath;
+                    obj.Price = book.Price;
+                    obj.Publisher = book.Publisher;
+                    obj.Title = book.Title;
+                    obj.Active = book.Active;
+                    obj.AuthorEmail = book.AuthorEmail;
+                    obj.Category = book.Category;
+                    obj.Contents = book.Contents;
+                    obj.Creationdate = book.Creationdate;
+
+                    if (book.Active == "true") { obj.ActiveFlag = true; } else obj.ActiveFlag = false;
+                    db.TblCreatebooks.Add(obj);
+                    db.SaveChanges();
+                    return Ok(new { dbPath });
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest();
+                }
+
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+
+            //    book.Creationdate = DateTime.Today;
+            //    //db.TblCreatebooks.Add(book);
+
+            //    //db.SaveChanges();
+            //    //var response = new { Status = "Success" };
+            //    //return Ok(response);
+
+
+            //    var file = Request.Form.Files[0];
+            //    var foldername = "Images";
+            //    var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), foldername);
+            //    if (file.Length > 0)
+            //    {
+            //        var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            //        var fullPath = Path.Combine(pathToSave, fileName);
+            //        var dbPath = Path.Combine(foldername, fileName);
+            //        using (var stream = new FileStream(fullPath, FileMode.Create))
+            //        {
+            //            file.CopyTo(stream);
+            //        }
+            //        TblCreatebook obj = new TblCreatebook();
+            //        obj.Image = dbPath;
+            //        obj.Price = book.Price;
+            //        obj.Publisher = book.Publisher;
+            //        obj.Title = book.Title;
+            //        obj.Active = book.Active;
+            //        obj.AuthorEmail = book.AuthorEmail;
+            //        obj.Category = book.Category;
+            //        obj.Contents = book.Contents;
+            //        obj.Creationdate = book.Creationdate;
+
+            //        if (book.Active == "true") { obj.ActiveFlag = true; } else obj.ActiveFlag = false;
+            //        db.TblCreatebooks.Add(obj);
+            //        db.SaveChanges();
+            //        return Ok(new { dbPath });
+            //    }
+            //    else
+            //    {
+            //        return BadRequest();
+            //    }
+
+
+
+        }
+
+        //blob end
 
 
         //TEST Image

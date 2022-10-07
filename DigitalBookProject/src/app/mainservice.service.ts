@@ -17,8 +17,9 @@ _loginUrl="https://localhost:44363/api/gateway/Login/authorlogin";
 _regUrl="https://localhost:44363/api/gateway/Login/register-author";
 
 
-_loginReaderUrl="https://localhost:44396/api/Reader/readerlogin";
-_searchBookUrl="https://localhost:44396/api/Reader/searchbook";
+//_loginReaderUrl="https://localhost:44396/api/Reader/readerlogin";
+_loginReaderUrl="https://localhost:44363/api/gateway/Reader/readerlogin";
+_searchBookUrl="https://localhost:44363/api/gateway/Reader/searchbook";
 
 //this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements)
 

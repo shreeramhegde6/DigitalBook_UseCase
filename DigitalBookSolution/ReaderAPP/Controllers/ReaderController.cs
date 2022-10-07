@@ -95,13 +95,19 @@ namespace ReaderAPP.Controllers
         public IEnumerable<TblCreatebook> SearchBook([FromBody] SearchModel searchbook)
         {
 
-            DateTime curr = new DateTime();
+            var curr = new DateTime();
             if (searchbook.Creationdate != "") { curr = Convert.ToDateTime(searchbook.Creationdate); }
             //DateTime curr = Convert.ToDateTime(searchbook.Creationdate);
+            
             List<TblCreatebook> test = new List<TblCreatebook>();
             if (searchbook.Publisher == "" && searchbook.Title == "" && searchbook.Category == "")
             {
-                test = db.TblCreatebooks.Where(x => x.Creationdate == curr && x.ActiveFlag == true).Select(x => x).ToList();
+                test = db.TblCreatebooks.Where(x => x.Creationdate.Value.Date.ToString() == searchbook.Creationdate && x.ActiveFlag == true).Select(x => x).ToList();
+            }
+
+            else if (searchbook.Publisher == "" && searchbook.Title == "" && searchbook.Creationdate != "" && searchbook.Category!="")
+            {
+                test = db.TblCreatebooks.Where(x => x.Category == searchbook.Category && x.Creationdate.Value.Date.ToString() == searchbook.Creationdate  && x.ActiveFlag == true).Select(x => x).ToList();
             }
 
             else if (searchbook.Publisher == "" && searchbook.Title == "" && searchbook.Creationdate == "")

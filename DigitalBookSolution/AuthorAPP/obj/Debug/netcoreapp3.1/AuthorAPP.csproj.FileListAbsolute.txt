@@ -178,4 +178,11 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.pdb
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.genruntimeconfig.cache
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Debug\netcoreapp3.1\Azure.Core.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Debug\netcoreapp3.1\System.IO.Hashing.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Debug\netcoreapp3.1\System.Memory.Data.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Debug\netcoreapp3.1\AuthorAPP.csproj.CopyComplete
