@@ -3,7 +3,7 @@
     <div class="card bg-light" style="background-color: blue;">
       <h4 class="card-title mt-3 text-center">Create Book</h4>
       <article class="card-body mx-auto" style="max-width: 400px;">
-        <div class="form-group input-group">
+        <div class="form-group input-group p-2">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Title</i> </span>
           </div>
@@ -11,7 +11,7 @@
         </div> <!-- form-group end.// -->
         
 
-        <div class="form-group input-group">
+        <div class="form-group input-group p-2">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Catogory</i> </span>
           </div>
@@ -26,7 +26,7 @@
           <!-- <input [(ngModel)]="FormData.category" class="form-control" id ="category" name ="category" placeholder="Enter Catogory" type="text"> -->
         </div> <!-- form-group end.// -->
 
-        <div class="form-group input-group">
+        <div class="form-group input-group p-2">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Image</i> </span>
           </div>
@@ -36,21 +36,21 @@
           <button  (click)="file.click()" >Upload</button>
         </div>
 
-        <div class="form-group input-group">
+        <div class="form-group input-group p-2">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Price</i> </span>
           </div>
           <input [(ngModel)]="FormData.price" class="form-control" placeholder="Enter Price" type="text">
         </div> <!-- form-group end.// -->
 
-        <div class="form-group input-group">
+        <div class="form-group input-group p-2">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Publisher</i> </span>
           </div>
           <input [(ngModel)]="FormData.publisher" class="form-control" placeholder="Enter Publisher" type="text">
         </div> <!-- form-group end.// -->
 
-        <div class="form-group input-group">
+        <div class="form-group input-group p-2">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;">Active</i> </span>
           </div>
@@ -62,7 +62,7 @@
           </div>
           <!-- <input [(ngModel)]="FormData.active" class="form-control" placeholder="true or false" type="tel"> -->
         </div> <!-- form-group end.// -->
-        <div class="form-group input-group">
+        <div class="form-group input-group p-1">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i style="width: 60px;resize: none;">Content</i> </span>
           </div>
@@ -73,7 +73,7 @@
       </article>
       <div class="row justify-content-end">
         <div class="form-group col-sm-6"> <button type="button" class="btn-block btn-primary"
-                (click)="Add()">Save and Create</button> </div>
+                (click)="Add()">Save </button> </div>
     </div>
     <div *ngIf="addsuccess" class="alert alert-primary" role="alert">
       <strong>Success!!</strong> <a  class="alert-link" (click)="reloadPage()">"Continue.."</a>
@@ -87,7 +87,7 @@
 </div>
 
 <app-grid-ui
-[grid-columns]="[{'colName':''},{'colName':'Title'},{'colName':'Category'},{'colName':'Rate .RS'},{'colName':'Publisher'},{'colName':'contents'}]"
+[grid-columns]="[{'colName':'Logo'},{'colName':'Title'},{'colName':'Category'},{'colName':'Rate .RS'},{'colName':'Publisher'},{'colName':'contents'}]"
 [grid-data]="CreateBookModels" 
 (grid-selected)="EditAuthor($event)" (grid-delete)="DeleteAuthor($event)" (book-block)="BlockGrid($event)" (book-unblock)="UnBlockGrid($event)">
 </app-grid-ui>

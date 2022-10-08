@@ -73,6 +73,9 @@ export class SearchbookComponent implements OnInit {
   
   bookBuy(input:any){
     this.buyEvents=true;
+    this.SearchModels[0]=input;
+    this.bookprice=this.SearchModels[0].price;
+    this.booksid=this.SearchModels[0].id;
     //this.bookValueArray=this.SearchModels.values();
 
     
@@ -88,8 +91,8 @@ export class SearchbookComponent implements OnInit {
       console.log(input);
       this.showElements=true;
        this.SearchModels = input;
-       this.bookprice=this.SearchModels[0].price;
-       this.booksid=this.SearchModels[0].id;
+       //this.bookprice=this.SearchModels[0].price;
+      // this.booksid=this.SearchModels[0].id;
 
      }
 

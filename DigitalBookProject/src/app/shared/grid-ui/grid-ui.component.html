@@ -9,7 +9,7 @@
 
 
 
-<table class="table table-bordered">
+<table style="border: 2px solid black; background-color:lemonchiffon;width: 100%;" class="table table-bordered">
     <tr>
         <th *ngFor="let col of gridColumns">
              {{col.colName}} 
@@ -19,27 +19,28 @@
        <!-- <td *ngFor="let col of gridColumns">
         {{colObj[col.colName]}}
         </td> -->
-        <td><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td>
-        <td>{{colObj.title}}</td>
-        <td>{{colObj.category}}</td>
+        <td style="width: 10%;"><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td>
+        <td style="width: 15%;">{{colObj.title}}</td>
+        <td style="width: 10%;">{{colObj.category}}</td>
         
-        <td>{{colObj.price}}</td>
-        <td>{{colObj.publisher}}</td>
-        <td>{{colObj.contents}}</td>
+        <td style="width: 10%;">{{colObj.price}}</td>
+        <td style="width: 10%;">{{colObj.publisher}}</td>
+        <td style="width: 15%;">{{colObj.contents.substring(0,20)}}</td>
         
-            <td>
-                <a style="color: brown;" (click)="selectedGrid(colObj)" class="btn btn-primary">Edit</a>
-                <a style="color: brown;" (click)="deleteGrid(colObj)" class="btn btn-primary">delete</a>
-                <div *ngIf="colObj.activeFlag;else other_content ">
-                    <a class="btn btn-primary " title="block" data-toggle="tooltip" (click)="blockGrid(colObj)">block</a>
-                </div>                                
+            <td style="width: 21%;"> 
+                <div>
+                     <a  (click)="selectedGrid(colObj)" class="btn btn-primary">Edit</a>&nbsp;
+                <a  (click)="deleteGrid(colObj)" class="btn btn-danger">Delete</a>&nbsp;
+                <!-- <div *ngIf="colObj.activeFlag;else other_content "> -->
+                    <a  *ngIf="colObj.activeFlag;else other_content " class="btn btn-secondary " title="block" data-toggle="tooltip" (click)="blockGrid(colObj)">block</a>
+                                                
                 <ng-template #other_content>
-                    <div>
-                    <a class="btn btn-primary " title="unblock" data-toggle="tooltip" (click)="unblockGrid(colObj)">unblock</a>
-                    </div>
+                    
+                    <a class="btn btn-secondary" title="unblock" data-toggle="tooltip" (click)="unblockGrid(colObj)">unblock</a>
+                   
                 </ng-template>
 
-                
+            </div>
                 </td>
             
     </tr>

@@ -9,7 +9,7 @@
 
 
 
-<table class="table table-bordered">
+<table  style="border: 2px solid black; background-color:lemonchiffon;width: 100%;" class="table table-bordered">
     <tr>
         <th *ngFor="let col of gridColumns">
              {{col.colName}} 
@@ -20,19 +20,22 @@
         {{colObj[col.colName]}}
         </td> -->
         
-        <td><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td>
-        <td>{{colObj.title}}</td>
-        <td>{{colObj.price}}</td>
+        <td style="width: 20%;"><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td>
+        <td style="width: 40%;">{{colObj.title}}</td>
+        <td style="width: 40%;">{{colObj.price}}</td>
         
         <!-- <td><img src="{{imageUrl}}{{colObj.image}}" style="width: 40px;height: 40px;" alt="No Image"></td>
         
         <td>{{colObj.publisher}}</td>
         <td>{{colObj.contents}}</td> -->
         
-            <td>
+            <td style="width: 10%;">
+                <div>
                 <!-- <a style="color: brown;" (click)="selectedGrid(colObj)" class="btn btn-primary">Edit</a> -->
-                <a style="color: brown;" (click)="buyGrid(colObj)" class="btn btn-primary">BUY</a>
-                </td>
+                <a  (click)="buyGrid(colObj)" class="btn btn-primary">BUY</a>
+            </div>
+            </td>
+            
             
     </tr>
 </table>
