@@ -1,7 +1,7 @@
 <div *ngIf="returnbool">
   
   <div class="alert alert-primary" role="alert">
-    <strong>Mr/Ms <i> "{{currentUser}}"</i> <br> Your Refund Request has been Generated !! <br> REQ.NO : #RETOCT{{deleteId}}   <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
+    <strong>Mr/Ms <i> "{{currentUser}}"</i> <br> Your Refund Request has been Generated !! <br> Ref.NO : #RETOCT{{deleteId}}   <br></strong> <a  class="alert-link" href="searchbook">Click here to Search For More Books</a>
     <br><a  class="alert-link" href="viewbook">Continue to Read the Books..</a>
     <br>
   </div>
@@ -14,7 +14,8 @@
 </div>
 
 <div *ngIf="!readingInv" >
-  <h2>Welcome To Your Reading House</h2>
+  <h2>Welcome To Your Reading House</h2> 
+  <div style="text-align: right;"><a href="paymentinfo" style="color: rgb(252, 232, 232);"  class="btn btn-primary">Payment History</a></div>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -33,8 +34,8 @@
              <td>{{colObj.publisher}}</td>
              <td>{{colObj.contents}}</td> -->
              <td>
-                <a style="color: brown;" (click)="selectedGrid(colObj.bookId,colObj.price)" class="btn btn-primary">View Invoice</a>
-               <a style="color: brown;" (click)="returnBook(colObj.id)" class="btn btn-primary">Cancel</a>
+                <!-- <a style="color: brown;" (click)="selectedGrid(colObj.id,colObj.price)" class="btn btn-primary">View Invoice</a> -->
+               <a  (click)="returnBook(colObj.id)" class="btn btn-warning">Return Book</a>
                 </td>
       
     </tbody>
@@ -43,7 +44,7 @@
 <div *ngIf="readingInv">
   
   <div class="alert alert-primary" role="alert">
-    <strong>DIGIBOOK Online Book Store Invoice  >><br>===========================<br>*Customer ID :<i> "{{currentUser}}"</i>  <br>*INVOICE N.O : <i>DGB113{{invoID}}</i>  <br></strong> <strong>*Total Amount : <i>{{priceId}}</i></strong> <br><strong>============================</strong> <br><a  class="alert-link" href="viewbook">Continue Reading the Book..</a>
+    <strong>DIGIBOOK Online Book Store Invoice  >><br>===========================<br>*Customer ID :<i> "{{currentUser}}"</i>  <br>*INVOICE N.O : <i>DGB-001A-{{invoID}}</i>  <br></strong> <strong>*Total Amount : <i>{{priceId}}</i></strong> <br><strong>============================</strong> <br><a  class="alert-link" href="viewbook">Continue Reading the Book..</a>
     <br><br> <a  class="alert-link" href="searchbook">Click here to Search For New Books</a>
   
   </div>

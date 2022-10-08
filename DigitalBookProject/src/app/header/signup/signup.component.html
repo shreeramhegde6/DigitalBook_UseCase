@@ -1,3 +1,9 @@
+<div *ngIf="notification;else elsepartShow">
+<div *ngIf="notification" class="alert alert-success" role="alert">
+<strong>Registration Success!!</strong><br> <a  class="alert-link" href="#">Click here to Login with New Credentials</a>
+</div>
+</div>
+<ng-template #elsepartShow>
 <div *ngIf="!regAsreader;else elsepart">
 <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
@@ -167,4 +173,5 @@
       </div>
     </div>
   </section>
+</ng-template>
 </ng-template>

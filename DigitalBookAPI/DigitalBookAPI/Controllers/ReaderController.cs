@@ -151,6 +151,17 @@ namespace DigitalBookAPI.Controllers
         
         }
 
+        [HttpGet]
+        [Route("getinvoice")]
+        public IEnumerable<TblBuybook> GetInvoice(string readername)
+        {
+            var ret = db.TblBuybooks.Where(x => x.User == readername).Select(x => x).OrderByDescending(x => x.Id).ToList();
+
+            return ret;
+
+
+        }
+
         [HttpDelete]
         [Route("returnbook")]
         public IActionResult Delete(int id)

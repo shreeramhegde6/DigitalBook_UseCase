@@ -57,6 +57,13 @@ loginReader(){
      //this.wrong=false;
      sessionStorage.setItem('token',"logged");
      sessionStorage.setItem('userNames',this.UserData.userName);
+     sessionStorage.setItem('ReaderLogged','true');
+
+    //  this._router.navigateByUrl('/',{skipLocationChange:true}).then(
+    //    ()=>{
+    //     this._router.navigate(['searchbook']);
+    //    }
+    //  );
      this._router.navigate(['searchbook']);
      
       

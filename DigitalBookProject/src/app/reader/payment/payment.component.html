@@ -1,0 +1,41 @@
+
+<div *ngIf="readingInv; else elsepart">
+    <div><h2>Online Invoice</h2> </div>
+  
+    <div class="alert alert-primary" role="alert">
+        
+      <strong>>>  DIGIBOOK Online Book Services >><br>===========================<br>*Customer ID :<i> "{{currentUser}}"</i>  <br>*INVOICE N.O : <i>DGB-001A-{{invoID}}</i>  <br></strong> <strong>*Total Amount : <i>{{priceId}} Rs.</i></strong><br><strong>*Purchase Time : <i>{{dateId}}</i></strong><strong></strong> <br><strong>============================</strong> <br>
+      <img src="assets/images/inv.PNG" style="width: 100px;height: 100px;" alt="No Image"> 
+      <li style="text-align: center;"> <h1>Visit Again!!</h1> </li>
+    </div>
+  </div>
+<ng-template #elsepart>
+    <div><h2>Payment History</h2> <img src="assets/images/upi-icon.png" style="width: 100px;height: 100px;" alt="No Image"> </div>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">SI Number</th>
+        <th scope="col">Invoice Number</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">Time Of Billing</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let colObj of SearchModels;let i = index;">
+             
+            <td>{{i+1}}</td>  
+          <!-- <td><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td> -->
+          <td>DGB-001A-{{colObj.id}}</td>
+             <td>{{colObj.price}} Rs.</td>
+             <td>{{colObj.buydate}}</td>
+             <!-- <td>{{colObj.price}}</td>
+             <td>{{colObj.publisher}}</td>
+             <td>{{colObj.contents}}</td> -->
+             <td>
+                <a  (click)="selectedGrid(colObj.id,colObj.price,colObj.buydate)" class="btn btn-success">Download</a>
+               
+                </td>
+      
+    </tbody>
+  </table>
+</ng-template>

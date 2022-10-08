@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
   regDataModel:UserModel=new UserModel();
   regReadDataModel:UserModel=new UserModel();
   regAsreader:boolean=false;
+  notification:boolean=false;
 
   constructor(private http:HttpClient, private _router:Router) { }
 
@@ -27,8 +28,10 @@ export class SignupComponent implements OnInit {
     };
     this.http.post("https://localhost:44363/api/gateway/Login/register-author",userObject).subscribe(
       res=>{
-        alert("UserRegisterd Successfully!  Please Click Ok to Login with New User credentials");
-      this._router.navigate(['']);},
+        this.notification=true;
+        //alert("UserRegisterd Successfully!  Please Click Ok to Login with New User credentials");
+      //this._router.navigate(['']);
+    },
       res=>{console.log(res);}
     );
 
@@ -47,8 +50,10 @@ export class SignupComponent implements OnInit {
     };
     this.http.post("https://localhost:44363/api/gateway/Reader/register-reader",readerObject).subscribe(
       res=>{
-        alert("ReaderRegisterd Successfully!  Please Click Ok to Login with New User credentials");
-      this._router.navigate(['']);},
+        this.notification=true;
+       // alert("ReaderRegisterd Successfully!  Please Click Ok to Login with New User credentials");
+      //this._router.navigate(['']);
+    },
       res=>{console.log(res);}
     );
 

@@ -42,8 +42,6 @@ export class SearchbookComponent implements OnInit {
 
   ngOnInit(){
 
-   // this.GetStatus();
-
     
   }
 

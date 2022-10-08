@@ -9,13 +9,17 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'DigitalBookProject';
 
+  readerLogged:boolean=false;
+
+
   constructor(private _router:Router) {
  
     
   }
 
   ngOnInit() : void {
-
+    this.readerLogged=Boolean( sessionStorage.getItem('ReaderLogged'));
+    //alert(this.readerLogged);
   }
 
   logged(): boolean{
@@ -31,8 +35,10 @@ export class AppComponent implements OnInit {
     if(sessionStorage.getItem('token')!=null){
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('userNames');
+    sessionStorage.removeItem('ReaderLogged');
     localStorage.removeItem('token');
       this._router.navigate(['']);
+      window.location.reload();
     }
   }
 }
