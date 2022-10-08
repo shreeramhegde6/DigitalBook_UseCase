@@ -9,14 +9,14 @@
 <div *ngIf="returnboolfail">
   
   <div class="alert alert-danger" role="alert">
-    <strong>Sorry Mr/Ms <i> "{{currentUser}}"</i> <br>  Refund Request is allowed ONLY  within  24hrs  <br></strong> <a  class="alert-link" href="viewbook">Yes I Understand</a>
+    <strong>Sorry Mr/Ms <i> "{{currentUser}}"</i> <br>  Refund Request is allowed ONLY  within  24hrs of Purchase <br></strong> <a  class="alert-link" href="viewbook">Yes I Understand</a>
   </div>
 </div>
 
 <div *ngIf="!readingInv" >
   <h2>Welcome To Your Reading House</h2> 
   <div style="text-align: right;"><a href="paymentinfo" style="color: rgb(252, 232, 232);"  class="btn btn-primary">Payment History</a></div>
-<table class="table table-striped">
+<table style="border: 2px solid black; background-color:lemonchiffon;width: 100%;" class="table table-striped">
     <thead>
       <tr>
 
@@ -28,12 +28,12 @@
         <tr *ngFor="let colObj of SearchModels">
              
              
-          <td><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td>
-             <td>{{colObj.contents}}</td>
+          <td style="width: 50%;"><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 150px;height: 150px;" alt="No Image"></td>
+             <td style="width: 30%;">{{colObj.contents}}</td>
              <!-- <td>{{colObj.price}}</td>
              <td>{{colObj.publisher}}</td>
              <td>{{colObj.contents}}</td> -->
-             <td>
+             <td style="width: 20%;">
                 <!-- <a style="color: brown;" (click)="selectedGrid(colObj.id,colObj.price)" class="btn btn-primary">View Invoice</a> -->
                <a  (click)="returnBook(colObj.id)" class="btn btn-warning">Return Book</a>
                 </td>

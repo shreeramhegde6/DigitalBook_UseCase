@@ -55,11 +55,11 @@
 <!-- form-group// -->
         </article>
         <div class="row justify-content-end">
-          <div class="form-group col-sm-6"> <button type="button" class="btn-block btn-primary"
+          <div class="form-group col-sm-6"> <button type="button" class="btn btn-primary"
                   (click)="searchBook()">Search</button> </div>
       </div>
       <div class="row justify-content-end" style="padding-left: 400px;">
-        <div class="form-group col-sm-6"> <button type="button" class="btn-block btn-primary"
+        <div class="form-group col-sm-6"> <button type="button" class="btn btn-primary"
                 (click)="readBook()">My Books</button> </div>
     </div>
 
@@ -76,7 +76,7 @@
   </div>
  <div *ngIf="showElements">
 <app-reader-ui
-[grid-columns]="[{'colName':'image'},{'colName':'title'},{'colName':'price'}]"
+[grid-columns]="[{'colName':'Cover'},{'colName':'Title'},{'colName':'Publisher'},{'colName':'Genre'},{'colName':'Price'}]"
 [grid-data]="SearchModels" 
  (grid-buy)="bookBuy($event)">
 </app-reader-ui>
