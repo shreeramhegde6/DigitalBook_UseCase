@@ -6,5 +6,6 @@ export class PaymentModel{
     image:string='';
     user:string='';
     buydate:any;
+    title:string='';
 
 }

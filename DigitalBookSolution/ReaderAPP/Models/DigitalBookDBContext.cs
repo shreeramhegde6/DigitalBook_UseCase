@@ -43,10 +43,7 @@ namespace ReaderAPP.Models
 
                 entity.Property(e => e.Buydate).HasColumnType("datetime");
 
-                entity.Property(e => e.Contents)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Contents).IsUnicode(false);
 
                 entity.Property(e => e.Image)
                     .HasMaxLength(50)
@@ -84,10 +81,7 @@ namespace ReaderAPP.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Contents)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Contents).IsUnicode(false);
 
                 entity.Property(e => e.Creationdate).HasColumnType("datetime");
 

@@ -15,15 +15,17 @@
     <thead>
       <tr>
         <th scope="col">SI Number</th>
+        
         <th scope="col">Invoice Number</th>
         <th scope="col">Amount Paid</th>
-        <th scope="col">Time Of Billing</th>
+        <th scope="col">Date Of Purchase</th>
       </tr>
     </thead>
     <tbody>
         <tr *ngFor="let colObj of SearchModels;let i = index;">
              
             <td>{{i+1}}</td>  
+            
           <!-- <td><img src="https://digibookblob.blob.core.windows.net/images/{{colObj.image}}" style="width: 100px;height: 100px;" alt="No Image"></td> -->
           <td>DGB-001A-{{colObj.id}}</td>
              <td>{{colObj.price}} Rs.</td>
@@ -32,8 +34,7 @@
              <td>{{colObj.publisher}}</td>
              <td>{{colObj.contents}}</td> -->
              <td>
-                <a  (click)="selectedGrid(colObj.id,colObj.price,colObj.buydate)" class="btn btn-success">Download</a>
-               
+                <a  (click)="generatePDF1(colObj.id,colObj.price,colObj.buydate)" class="btn btn-success">Download</a>
                 </td>
       
     </tbody>

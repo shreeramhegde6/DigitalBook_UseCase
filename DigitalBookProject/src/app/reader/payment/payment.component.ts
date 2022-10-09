@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 import { ViewModel } from '../viewbook/viewmodel';
 import { PaymentModel } from './paymentmodel';
 
+const pdfMakeX = require('pdfmake/build/pdfmake.js');
+const pdfFontsX = require('pdfmake-unicode/dist/pdfmake-unicode.js');
+pdfMakeX.vfs = pdfFontsX.pdfMake.vfs;
+import * as pdfMake from 'pdfmake/build/pdfmake';
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -60,5 +65,97 @@ this.SearchModels=input;
 console.log(input);
 
   }
+
+  //PDFGenerator
+  printGrid(inID:any,inPrice:any,inDate:any){
+
+  }
+generatePDF(action = 'open') {    
+        
+  let docDefinition = {      
+      header: 'C#Corner PDF Header',      
+      content: 'Sample PDF generated with Angular and PDFMake for C#Corner Blog'      
+    };    
+  
+  if(action==='download'){    
+    pdfMake.createPdf(docDefinition).download();    
+  }else if(action === 'print'){    
+    pdfMake.createPdf(docDefinition).print();          
+  }else{    
+    pdfMake.createPdf(docDefinition).open();          
+  }    
+  
+}    
+
+///////////////////////
+//working
+////////
+generatePDF1(inID:any,inPrice:any,inDate:any) {  
+  let docDefinition:any = {  
+    content: [  
+        // Previous configuration  
+        {  
+            columns: [  
+
+                [  
+                  {  
+                    text: 'DigiBook Private LTD',  
+                    fontSize: 16,  
+                    alignment: 'center',  
+                    color: '#3e32a8'  
+                  },  
+                  {  
+                    text: 'INVOICE',  
+                    fontSize: 20,  
+                    bold: true,  
+                    alignment: 'center',  
+                    decoration: 'underline',  
+                    color: 'skyblue'  
+                  } ,
+                    {  
+                        text: "",  
+                       bold: true  
+                    },  
+                    { text: "User Email :",
+                      bold:true 
+                    },  
+                    { text: this.currentUser},
+
+                    { text: "Total Amount :" ,bold:true},  
+                    { text: inPrice +".RS"} , 
+
+                    { text: "Purchase Time :" ,bold:true},  
+                    { text: inDate } , 
+
+                    { text: "Invoice N.o :" ,bold:true},  
+                    { text: "DGB-001A-"+inID } , 
+
+
+                ],
+                [  
+                  [{ qr: `${this.currentUser}`, fit: '50' }],  
+                  //[{ text: 'Signature', alignment: 'right', italics: true }],  
+              ],
+   
+                [  
+                    {  
+                        text: `Date: ${new Date().toLocaleString()}`,  
+                        alignment: 'right'  
+                    },  
+                    {  
+                        text: `Token No : ${((Math.random() * 1000).toFixed(0))}`,  
+                        alignment: 'right'  
+                    }  
+                ]  ,
+ 
+            ]  
+        },  
+    ] 
+    // Common Styles  
+}   
+      
+  pdfMake.createPdf(docDefinition).open();  
+}
+
 
 }
