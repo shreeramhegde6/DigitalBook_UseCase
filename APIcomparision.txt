@@ -1,7 +1,7 @@
 ********Author API's*******
 
 1.LoginAuthor
-//_loginUrl="https://localhost:44396/api/Login/authorlogin";
+//_loginUrl="http://20.232.23.87/api/Login/authorlogin";
 gateway_loginUrl="https://localhost:44363/api/gateway/Login/authorlogin";
 
 2.registerauthor
@@ -55,6 +55,11 @@ gateway :: this.http.get("https://localhost:44363/api/gateway/Reader/viewbook?re
 1.12 return book
 
 gateway ::  this.http.delete("https://localhost:44396/api/gateway/Reader/returnbook?id="+this.deleteId)
+
+
+1.13
+paymentInfo
+    this.http.get("http://20.232.23.87/api/gateway/Reader/getinvoice?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
 
 ========================
 Bookbuy
