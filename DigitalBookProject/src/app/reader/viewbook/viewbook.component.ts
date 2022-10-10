@@ -31,7 +31,7 @@ export class ViewbookComponent implements OnInit {
     //=this.currentUser.toString();
     //this.http.get("https://localhost:44396/api/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
     
-    this.http.get("https://localhost:44363/api/gateway/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
+    this.http.get("https://20.232.23.87/api/gateway/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
     
   }
 
@@ -56,7 +56,7 @@ console.log(input);
   returnBook(input:any){
     this.deleteId=input;
     //this.http.delete("https://localhost:44396/api/Author?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
-    this.http.delete("https://localhost:44363/api/gateway/Reader/returnbook?id="+this.deleteId).subscribe(res => this.PostSuccessRet(), res =>this.PostfailRet());
+    this.http.delete("https://20.232.23.87/api/gateway/Reader/returnbook?id="+this.deleteId).subscribe(res => this.PostSuccessRet(), res =>this.PostfailRet());
 
     //this.returnbool=true;
 

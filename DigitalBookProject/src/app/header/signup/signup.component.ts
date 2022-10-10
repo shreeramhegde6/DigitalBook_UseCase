@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
       userName:this.regDataModel.userName,
       password:this.regDataModel.password
     };
-    this.http.post("https://localhost:44363/api/gateway/Login/register-author",userObject).subscribe(
+    this.http.post("https://20.232.23.87/api/gateway/Login/register-author",userObject).subscribe(
       res=>{
         this.notification=true;
         //alert("UserRegisterd Successfully!  Please Click Ok to Login with New User credentials");
@@ -48,7 +48,7 @@ export class SignupComponent implements OnInit {
       userName:this.regDataModel.userName,
       password:this.regDataModel.password
     };
-    this.http.post("https://localhost:44363/api/gateway/Reader/register-reader",readerObject).subscribe(
+    this.http.post("https://20.232.23.87/api/gateway/Reader/register-reader",readerObject).subscribe(
       res=>{
         this.notification=true;
        // alert("ReaderRegisterd Successfully!  Please Click Ok to Login with New User credentials");

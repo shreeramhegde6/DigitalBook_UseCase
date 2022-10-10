@@ -12,14 +12,16 @@ export class MainserviceService {
   constructor(private http:HttpClient,private _route:Router) { }
 
 //_loginUrl="https://localhost:44396/api/Login/authorlogin";
-_loginUrl="https://localhost:44363/api/gateway/Login/authorlogin";
+_loginUrl="https://20.232.23.87/api/gateway/Login/authorlogin";
+
+
 //_regUrl="https://localhost:44396/api/Login/register-author";
-_regUrl="https://localhost:44363/api/gateway/Login/register-author";
+_regUrl="https://20.232.23.87/api/gateway/Login/register-author";
 
 
 //_loginReaderUrl="https://localhost:44396/api/Reader/readerlogin";
-_loginReaderUrl="https://localhost:44363/api/gateway/Reader/readerlogin";
-_searchBookUrl="https://localhost:44363/api/gateway/Reader/searchbook";
+_loginReaderUrl="https://20.232.23.87/api/gateway/Reader/readerlogin";
+_searchBookUrl="https://20.232.23.87/api/gateway/Reader/searchbook";
 
 //this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements)
 
@@ -32,7 +34,7 @@ loginReader(login:any){
 }
 
 unblockbook(unblockID:any){
-  return this.http.put("https://localhost:44396/api/Books/book-unblock",unblockID);
+  return this.http.put("https://20.232.23.87/api/Books/book-unblock",unblockID);
 }
 
 checkAuth(){

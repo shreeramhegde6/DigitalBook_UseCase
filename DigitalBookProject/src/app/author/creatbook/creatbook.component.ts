@@ -29,7 +29,7 @@ export class CreatbookComponent implements OnInit {
     
   GetStatus(){
     //url:any="https://localhost:44396/api/Author/getbook?"+this.authorEmail;
-    this.http.get("https://localhost:44363/api/gateway/Author/getbook?cname="+this.authorEmail).subscribe(res=>this.Success(res),res=>console.log(res));
+    this.http.get("https://20.232.23.87/api/gateway/Author/getbook?cname="+this.authorEmail).subscribe(res=>this.Success(res),res=>console.log(res));
   }
 
 
@@ -57,7 +57,7 @@ export class CreatbookComponent implements OnInit {
   DeleteAuthor(input: any){
  
     //this.http.delete("https://localhost:44396/api/Author?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
-    this.http.delete("https://localhost:44363/api/gateway/Author/deletebook?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
+    this.http.delete("https://20.232.23.87/api/gateway/Author/deletebook?id=" + input.id).subscribe(res => this.PostSuccess(res), res => this.PostFailure(res));
   
   }
 
@@ -101,7 +101,7 @@ export class CreatbookComponent implements OnInit {
     if (this.isEdit) {
       
       //this.http.put("https://localhost:44396/api/Author/bookupdate", UpdateformElements).subscribe(res => this.PostSuccess(res), res => console.log(res));
-      this.http.put("https://localhost:44363/api/gateway/Author/bookupdate", UpdateformElements).subscribe(res => this.PostSuccess(res), res => console.log(res));
+      this.http.put("https://20.232.23.87/api/gateway/Author/bookupdate", UpdateformElements).subscribe(res => this.PostSuccess(res), res => console.log(res));
     }
     else {
 
@@ -115,7 +115,7 @@ export class CreatbookComponent implements OnInit {
       this.uploadData.append('Publisher', formElements.Publisher);
       this.uploadData.append('AuthorEmail', formElements.AuthorEmail);
   
-      this.http.post("https://localhost:44363/api/gateway/Author/createbook-image", this.uploadData).subscribe(res => this.PostSuccess(res), res => {this.PostFailure(res);this.addFail=true;})
+      this.http.post("https://20.232.23.87/api/gateway/Author/createbook-image", this.uploadData).subscribe(res => this.PostSuccess(res), res => {this.PostFailure(res);this.addFail=true;})
      //this.http.post("https://localhost:44396/api/Author/createbook", formElements).subscribe(res => this.PostSuccess(res), res => console.log(res))
     }
 
@@ -168,7 +168,7 @@ export class CreatbookComponent implements OnInit {
     this.blockId=inputdata.id;  
     //debugger;
    // this.http.put("https://localhost:44396/api/Books/book-block",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
-   this.http.put("https://localhost:44363/api/gateway/Author/book-block",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+   this.http.put("https://20.232.23.87/api/gateway/Author/book-block",this.blockId).subscribe(res=>this.GetStatus,res=>console.log(res));
    
    this.GetStatus();
     window.location.reload();
@@ -178,7 +178,7 @@ export class CreatbookComponent implements OnInit {
     this.unblockId=inputdata.id;  
     //this._service.UnBlockGridService(this.blockId);
     //this.http.put("https://localhost:44396/api/Books/book-unblock",this.unblockId).subscribe(res=>this.GetStatus,res=>console.log(res));
-    this.http.put("https://localhost:44363/api/gateway/Author/book-unblock",this.unblockId).subscribe(res=>this.GetStatus,res=>console.log(res));
+    this.http.put("https://20.232.23.87/api/gateway/Author/book-unblock",this.unblockId).subscribe(res=>this.GetStatus,res=>console.log(res));
     
     //alert(this.unblockId);
     this.GetStatus();

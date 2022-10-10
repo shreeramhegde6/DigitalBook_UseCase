@@ -36,7 +36,7 @@ export class SearchbookComponent implements OnInit {
     
   GetStatus(){
     //url:any="https://localhost:44396/api/Author/getbook?"+this.authorEmail;
-    this.http.get("https://localhost:44396/api/Author/getbook?cname="+this.authorEmail).subscribe(res=>this.Success(res),res=>console.log(res));
+    this.http.get("https://20.232.23.87/api/Author/getbook?cname="+this.authorEmail).subscribe(res=>this.Success(res),res=>console.log(res));
   }
 
 
@@ -65,7 +65,7 @@ export class SearchbookComponent implements OnInit {
    
       
       //this.http.post("https://localhost:44396/api/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)});
-      this.http.post("https://localhost:44363/api/gateway/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)});
+      this.http.post("https://20.232.23.87/api/gateway/Reader/searchbook", SearchformElements).subscribe(res => { this.Success(res)}, res => {this.searchFail();console.log(res)});
          
     
   }
@@ -112,7 +112,7 @@ export class SearchbookComponent implements OnInit {
 
 
     //this.http.post("https://localhost:44396/api/Reader/buybook", buyRequest).subscribe(res => { this.buySuccess(res)}, res => {this.buyFail(res);console.log(res)});
-    this.http.post("https://localhost:44363/api/gateway/BookBuy/buybook", buyRequest).subscribe(res => { this.buySuccess(res)}, res => {this.buyFail(res);console.log(res)});
+    this.http.post("https://20.232.23.87/api/gateway/BookBuy/buybook", buyRequest).subscribe(res => { this.buySuccess(res)}, res => {this.buyFail(res);console.log(res)});
     
 
 

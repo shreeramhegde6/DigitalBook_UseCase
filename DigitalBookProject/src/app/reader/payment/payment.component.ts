@@ -43,7 +43,7 @@ export class PaymentComponent implements OnInit {
     //=this.currentUser.toString();
     //this.http.get("https://localhost:44396/api/Reader/viewbook?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
     
-    this.http.get("https://localhost:44363/api/gateway/Reader/getinvoice?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
+    this.http.get("https://20.232.23.87/api/gateway/Reader/getinvoice?readername="+this.currentUser).subscribe(res=>this.postSuccess(res),res=>console.log(res));
     
   }
 
@@ -66,27 +66,7 @@ console.log(input);
 
   }
 
-  //PDFGenerator
-  printGrid(inID:any,inPrice:any,inDate:any){
-
-  }
-generatePDF(action = 'open') {    
-        
-  let docDefinition = {      
-      header: 'C#Corner PDF Header',      
-      content: 'Sample PDF generated with Angular and PDFMake for C#Corner Blog'      
-    };    
   
-  if(action==='download'){    
-    pdfMake.createPdf(docDefinition).download();    
-  }else if(action === 'print'){    
-    pdfMake.createPdf(docDefinition).print();          
-  }else{    
-    pdfMake.createPdf(docDefinition).open();          
-  }    
-  
-}    
-
 ///////////////////////
 //working
 ////////
