@@ -79,3 +79,10 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\AuthorAPP.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\AuthorAPP.pdb
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\AuthorAPP.genruntimeconfig.cache
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Release\netcoreapp3.1\win-x64\Azure.Core.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Release\netcoreapp3.1\win-x64\Azure.Storage.Blobs.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Release\netcoreapp3.1\win-x64\Azure.Storage.Common.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Release\netcoreapp3.1\win-x64\System.IO.Hashing.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Release\netcoreapp3.1\win-x64\System.Memory.Data.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Release\netcoreapp3.1\win-x64\System.Text.Encodings.Web.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\bin\Release\netcoreapp3.1\win-x64\System.Text.Json.dll

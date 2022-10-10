@@ -5,6 +5,9 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\AuthorAPP.runtimeconfig.json
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\AuthorAPP.pdb
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\Automatonymous.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\Azure.Core.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\Azure.Storage.Blobs.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\Azure.Storage.Common.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\Consul.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\GreenPipes.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\MassTransit.dll
@@ -50,9 +53,13 @@ C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Configuration.ConfigurationManager.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Diagnostics.DiagnosticSource.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.IO.Hashing.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Memory.Data.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Runtime.Caching.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Text.Encodings.Web.dll
+C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Text.Json.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\System.Threading.Channels.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\cogdotnet1708\Desktop\DigitalBook_UseCase\DigitalBookSolution\AuthorAPP\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\Microsoft.Data.SqlClient.SNI.pdb
